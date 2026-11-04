@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.3.0 — first Marketplace preview (unreleased)
+## 0.3.0 — first Marketplace preview (2026-11-04)
 
 Packaging for Visual Studio Marketplace: extension icon, gallery metadata, a
 user-facing README, preview flag, security policy and contribution guide. The
@@ -11,7 +11,7 @@ high-severity development-dependency advisories that blocked release.
 Plain `xql: |` blocks in YAML now receive XQL completion, hovers, argument hints
 and diagnostics while ordinary YAML keeps its existing language support. Each
 literal block is analyzed independently; folded, quoted and templated values
-remain outside this first scope.
+remain outside this first scope. XQL inside those blocks is also highlighted.
 
 Eclipse Dark now receives default XQL-only stage and function colours, including
 with semantic highlighting disabled. User token-colour settings retain precedence.
