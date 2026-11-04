@@ -1,0 +1,1020 @@
+{
+  "schemaVersion": 1,
+  "checked": "2026-10-25",
+  "sources": [
+    "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/stages-list",
+    "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/functions-list"
+  ],
+  "symbols": [
+    {
+      "name": "acos",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/acos"
+    },
+    {
+      "name": "add",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/add"
+    },
+    {
+      "name": "approx_count",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/approx_count"
+    },
+    {
+      "name": "approx_quantiles",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/approx_quantiles"
+    },
+    {
+      "name": "approx_top",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/approx_top"
+    },
+    {
+      "name": "array_all",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/array_all"
+    },
+    {
+      "name": "array_any",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/array_any"
+    },
+    {
+      "name": "array_length",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/array_length"
+    },
+    {
+      "name": "arrayconcat",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayconcat"
+    },
+    {
+      "name": "arraycreate",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraycreate"
+    },
+    {
+      "name": "arraydistinct",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraydistinct"
+    },
+    {
+      "name": "arrayfilter",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayfilter"
+    },
+    {
+      "name": "arrayindex",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayindex"
+    },
+    {
+      "name": "arrayindexof",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayindexof"
+    },
+    {
+      "name": "arraymap",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraymap"
+    },
+    {
+      "name": "arraymerge",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraymerge"
+    },
+    {
+      "name": "arrayrange",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayrange"
+    },
+    {
+      "name": "arraystring",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraystring"
+    },
+    {
+      "name": "asin",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/asin"
+    },
+    {
+      "name": "avg",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/avg_with_comp_stage",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/avg_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/avg_with_windowcomp_stage"
+      ]
+    },
+    {
+      "name": "bitwise_and",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_and"
+    },
+    {
+      "name": "bitwise_or",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_or"
+    },
+    {
+      "name": "bitwise_sleft",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_sleft"
+    },
+    {
+      "name": "bitwise_sright",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_sright"
+    },
+    {
+      "name": "bitwise_xor",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_xor"
+    },
+    {
+      "name": "cbrt",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cbrt"
+    },
+    {
+      "name": "ceil",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/ceil"
+    },
+    {
+      "name": "coalesce",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/coalesce"
+    },
+    {
+      "name": "concat",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/concat"
+    },
+    {
+      "name": "convert_from_base_64",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/convert_from_base_64"
+    },
+    {
+      "name": "convert_to_base_64",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/convert_to_base_64"
+    },
+    {
+      "name": "cos",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cos"
+    },
+    {
+      "name": "cosine_distance",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cosine_distance"
+    },
+    {
+      "name": "cot",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cot"
+    },
+    {
+      "name": "count",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/count_with_comp_stage",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/count_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/count_with_windowcomp_stage"
+      ]
+    },
+    {
+      "name": "count_distinct",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/count_distinct"
+    },
+    {
+      "name": "csc",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/csc"
+    },
+    {
+      "name": "current_time",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/current_time"
+    },
+    {
+      "name": "date_floor",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/date_floor"
+    },
+    {
+      "name": "divide",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/divide"
+    },
+    {
+      "name": "earliest",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/earliest"
+    },
+    {
+      "name": "euclidean_distance",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/euclidean_distance"
+    },
+    {
+      "name": "exp",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/exp"
+    },
+    {
+      "name": "extract_time",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/extract_time"
+    },
+    {
+      "name": "extract_url_host",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/extract_url_host"
+    },
+    {
+      "name": "extract_url_pub_suffix",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/extract_url_pub_suffix"
+    },
+    {
+      "name": "extract_url_registered_domain",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/extract_url_registered_domain"
+    },
+    {
+      "name": "first",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/first"
+    },
+    {
+      "name": "first_value",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/first_value"
+    },
+    {
+      "name": "floor",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/floor"
+    },
+    {
+      "name": "format_string",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/format_string"
+    },
+    {
+      "name": "format_timestamp",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/format_timestamp"
+    },
+    {
+      "name": "greatest",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/greatest"
+    },
+    {
+      "name": "hierarchy_match",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/hierarchy_match"
+    },
+    {
+      "name": "if",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/if"
+    },
+    {
+      "name": "incidr",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/incidr"
+    },
+    {
+      "name": "incidr6",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/incidr6"
+    },
+    {
+      "name": "incidrlist",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/incidrlist"
+    },
+    {
+      "name": "int_to_ip",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/int_to_ip"
+    },
+    {
+      "name": "ip_to_int",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/ip_to_int"
+    },
+    {
+      "name": "is_ipv4",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_ipv4"
+    },
+    {
+      "name": "is_ipv6",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_ipv6"
+    },
+    {
+      "name": "is_known_private_ipv4",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_known_private_ipv4"
+    },
+    {
+      "name": "is_known_private_ipv6",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_known_private_ipv6"
+    },
+    {
+      "name": "is_sla_breached",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_sla_breached"
+    },
+    {
+      "name": "json_extract",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract"
+    },
+    {
+      "name": "json_extract_array",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract_array"
+    },
+    {
+      "name": "json_extract_scalar",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract_scalar"
+    },
+    {
+      "name": "json_extract_scalar_array",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract_scalar_array"
+    },
+    {
+      "name": "json_functions_reference",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_functions_reference"
+    },
+    {
+      "name": "json_path_extract",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_path_extract"
+    },
+    {
+      "name": "lag",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/lag"
+    },
+    {
+      "name": "last",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/last"
+    },
+    {
+      "name": "last_value",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/last_value"
+    },
+    {
+      "name": "latest",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/latest"
+    },
+    {
+      "name": "least",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/least"
+    },
+    {
+      "name": "len",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/len"
+    },
+    {
+      "name": "list",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/list_with_comp_stage",
+      "contexts": [
+        "comp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/list_with_comp_stage"
+      ]
+    },
+    {
+      "name": "ln",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/ln"
+    },
+    {
+      "name": "log",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/log"
+    },
+    {
+      "name": "log10",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/log10"
+    },
+    {
+      "name": "lowercase",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/lowercase"
+    },
+    {
+      "name": "ltrim",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/ltrim"
+    },
+    {
+      "name": "max",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/max_with_comp_stage",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/max_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/max_with_windowcomp_stage"
+      ]
+    },
+    {
+      "name": "md5",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/md5"
+    },
+    {
+      "name": "median",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/median_with_comp_stage",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/median_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/median_with_windowcomp_stage"
+      ]
+    },
+    {
+      "name": "min",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/min_with_comp_stage",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/min_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/min_with_windowcomp_stage"
+      ]
+    },
+    {
+      "name": "mod",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/mod"
+    },
+    {
+      "name": "multiply",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/multiply"
+    },
+    {
+      "name": "object_create",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/object_create"
+    },
+    {
+      "name": "object_merge",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/object_merge"
+    },
+    {
+      "name": "parse_epoch",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/parse_epoch"
+    },
+    {
+      "name": "parse_timestamp",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/parse_timestamp"
+    },
+    {
+      "name": "pow",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/pow"
+    },
+    {
+      "name": "power",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/power"
+    },
+    {
+      "name": "rand",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/rand"
+    },
+    {
+      "name": "range_bucket",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/range_bucket"
+    },
+    {
+      "name": "rank",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/rank_with_windowcomp_stage",
+      "contexts": [
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/rank_with_windowcomp_stage"
+      ]
+    },
+    {
+      "name": "regexcapture",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/regexcapture"
+    },
+    {
+      "name": "regextract",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/regextract"
+    },
+    {
+      "name": "replace",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/replace"
+    },
+    {
+      "name": "replex",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/replex"
+    },
+    {
+      "name": "round",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/round"
+    },
+    {
+      "name": "row_number",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/row_number_with_windowcomp_stage",
+      "contexts": [
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/row_number_with_windowcomp_stage"
+      ]
+    },
+    {
+      "name": "rtrim",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/rtrim"
+    },
+    {
+      "name": "safe_add",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_add"
+    },
+    {
+      "name": "safe_divide",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_divide"
+    },
+    {
+      "name": "safe_multiply",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_multiply"
+    },
+    {
+      "name": "safe_negate",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_negate"
+    },
+    {
+      "name": "safe_subtract",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_subtract"
+    },
+    {
+      "name": "sec",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sec"
+    },
+    {
+      "name": "sha1",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sha1"
+    },
+    {
+      "name": "sha256",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sha256"
+    },
+    {
+      "name": "sha512",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sha512"
+    },
+    {
+      "name": "sign",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sign"
+    },
+    {
+      "name": "sin",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sin"
+    },
+    {
+      "name": "sla_time_remaining",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sla_time_remaining"
+    },
+    {
+      "name": "split",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/split"
+    },
+    {
+      "name": "sqrt",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sqrt"
+    },
+    {
+      "name": "stddev_population",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_population_with_comp_stage",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_population_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_population_with_windowcomp_stage"
+      ]
+    },
+    {
+      "name": "stddev_sample",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_sample_with_comp_stage",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_sample_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_sample_with_windowcomp_stage"
+      ]
+    },
+    {
+      "name": "string_count",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/string_count"
+    },
+    {
+      "name": "subtract",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/subtract"
+    },
+    {
+      "name": "sum",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sum_with_comp_stage",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sum_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sum_with_windowcomp_stage"
+      ]
+    },
+    {
+      "name": "tan",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/tan"
+    },
+    {
+      "name": "time_frame_end",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/time_frame_end"
+    },
+    {
+      "name": "timestamp_diff",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/timestamp_diff"
+    },
+    {
+      "name": "timestamp_seconds",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/timestamp_seconds"
+    },
+    {
+      "name": "to_boolean",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_boolean"
+    },
+    {
+      "name": "to_epoch",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_epoch"
+    },
+    {
+      "name": "to_float",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_float"
+    },
+    {
+      "name": "to_integer",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_integer"
+    },
+    {
+      "name": "to_json_string",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_json_string"
+    },
+    {
+      "name": "to_number",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_number"
+    },
+    {
+      "name": "to_string",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_string"
+    },
+    {
+      "name": "to_timestamp",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_timestamp"
+    },
+    {
+      "name": "trim",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/trim"
+    },
+    {
+      "name": "trunc",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/trunc"
+    },
+    {
+      "name": "uppercase",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/uppercase"
+    },
+    {
+      "name": "values",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/values"
+    },
+    {
+      "name": "var",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/var"
+    },
+    {
+      "name": "wildcard_match",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/wildcard_match"
+    },
+    {
+      "name": "alter",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/alter",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/alter"
+      ]
+    },
+    {
+      "name": "arrayexpand",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/arrayexpand",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/arrayexpand"
+      ]
+    },
+    {
+      "name": "bin",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/bin",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/bin"
+      ]
+    },
+    {
+      "name": "call",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/call",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/call"
+      ]
+    },
+    {
+      "name": "cold_dataset",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/dataset"
+    },
+    {
+      "name": "comp",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/comp",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/comp"
+      ]
+    },
+    {
+      "name": "config",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/config",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/config"
+      ]
+    },
+    {
+      "name": "datamodel",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/cortex-xsiam/reference-and-developer-docs/cortex-agentix-xql/build-xql-queries/how-to-build-xql-queries/xql-query-best-practices"
+    },
+    {
+      "name": "dataset",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/dataset",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/dataset"
+      ]
+    },
+    {
+      "name": "dedup",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/dedup",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/dedup"
+      ]
+    },
+    {
+      "name": "fields",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/fields",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/fields"
+      ]
+    },
+    {
+      "name": "filter",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/filter",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/filter"
+      ]
+    },
+    {
+      "name": "iploc",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/iploc",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/iploc"
+      ]
+    },
+    {
+      "name": "join",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/join",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/join"
+      ]
+    },
+    {
+      "name": "limit",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/limit",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/limit"
+      ]
+    },
+    {
+      "name": "pivot",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/pivot",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/pivot"
+      ]
+    },
+    {
+      "name": "preset",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/presets",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/presets"
+      ]
+    },
+    {
+      "name": "replacenull",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/replacenull",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/replacenull"
+      ]
+    },
+    {
+      "name": "search",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/search",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/search"
+      ]
+    },
+    {
+      "name": "sort",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/sort",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/sort"
+      ]
+    },
+    {
+      "name": "tag",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/tag",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/tag"
+      ]
+    },
+    {
+      "name": "target",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/target",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/target"
+      ]
+    },
+    {
+      "name": "top",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/top",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/top"
+      ]
+    },
+    {
+      "name": "transaction",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/transaction",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/transaction"
+      ]
+    },
+    {
+      "name": "transpose",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/stages-list",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/stages-list"
+      ]
+    },
+    {
+      "name": "union",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/union",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/union"
+      ]
+    },
+    {
+      "name": "view",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/view",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/view"
+      ]
+    },
+    {
+      "name": "windowcomp",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/windowcomp",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/windowcomp"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {"name":"format_timestamp","call":"format_timestamp(\"%Y\", _time, \"UTC\")","labels":["format_string","timestamp_field","[time_zone]"]},
+  {"name":"parse_epoch","call":"parse_epoch(\"%Y\", \"2031\", \"UTC\", \"SECONDS\")","labels":["format_string","timestamp_field","time_zone","time_unit"]},
+  {"name":"parse_timestamp","call":"parse_timestamp(\"%Y\", \"2031\", \"UTC\")","labels":["format_time_string","time_string","[time_zone]"]},
+  {"name":"time_frame_end","call":"time_frame_end()","labels":[]},
+  {"name":"timestamp_seconds","call":"timestamp_seconds(47)","labels":["integer"]},
+  {"name":"to_epoch","call":"to_epoch(_time, \"SECONDS\")","labels":["timestamp","time_unit"]},
+  {"name":"to_timestamp","call":"to_timestamp(47)","labels":["integer","[units]"]},
+  {"name":"cosine_distance","call":"cosine_distance([4, 5], [5, 4])","labels":["vector1","vector2"]},
+  {"name":"euclidean_distance","call":"euclidean_distance([4, 5], [5, 4])","labels":["vector1","vector2"]},
+  {"name":"hierarchy_match","call":"hierarchy_match([\"amber\"], \"branch\")","labels":["[path_segments]","[id_path]"]},
+  {"name":"incidrlist","call":"incidrlist(address_list, \"0.0.0.0/0\")","blocked":true},
+  {"name":"int_to_ip","call":"int_to_ip(address_number)","labels":["ipv4_integer"]},
+  {"name":"ip_to_int","call":"ip_to_int(address_value)","labels":["ipv4_address"]},
+  {"name":"is_ipv4","call":"is_ipv4(address_value)","labels":["string"]},
+  {"name":"is_ipv6","call":"is_ipv6(address_value)","labels":["string"]},
+  {"name":"is_known_private_ipv4","call":"is_known_private_ipv4(address_value)","labels":["string"]},
+  {"name":"is_known_private_ipv6","call":"is_known_private_ipv6(address_value)","labels":["string"]},
+  {"name":"is_sla_breached","call":"is_sla_breached(timer_value)","labels":["sla_timer_field"]},
+  {"name":"sla_time_remaining","call":"sla_time_remaining(timer_value)","labels":["sla_timer_field"]},
+  {"name":"range_bucket","call":"range_bucket(5, [3, 6, 9])","labels":["value","boundaries"]}
+]

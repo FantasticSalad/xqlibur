@@ -1,0 +1,17 @@
+**/*
+!package.json
+!images/icon.png
+!README.md
+!CHANGELOG.md
+!LICENSE
+!PRIVACY.md
+!THIRD_PARTY_NOTICES.md
+!language-configuration.json
+!syntaxes/**
+!snippets/**
+!dist/extension.cjs
+!dist/server.cjs
+!dist/THIRD_PARTY_LICENSES.txt
+!reference/catalogue.json
+!reference/signatures.json
+!docs/parser.md

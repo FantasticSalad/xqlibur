@@ -1,0 +1,22 @@
+[
+  {"name":"multiply","call":"multiply(4, 5)","labels":["value_1","value_2"]},
+  {"name":"pow","call":"pow(4, 2)","labels":["base","exponent"]},
+  {"name":"power","call":"power(4, 2)","labels":["base","exponent"]},
+  {"name":"rand","call":"rand()","labels":[]},
+  {"name":"round","call":"round(4.75)","labels":["value"]},
+  {"name":"safe_add","call":"safe_add(4, 5)","labels":["number1","number2"]},
+  {"name":"safe_divide","call":"safe_divide(20, 4)","labels":["dividend","divisor"]},
+  {"name":"safe_multiply","call":"safe_multiply(4, 5)","labels":["number1","number2"]},
+  {"name":"safe_negate","call":"safe_negate(4)","labels":["number"]},
+  {"name":"safe_subtract","call":"safe_subtract(5, 4)","labels":["number1","number2"]},
+  {"name":"sec","call":"sec(0.25)","labels":["numeric_expression"]},
+  {"name":"sign","call":"sign(-4)","labels":["number"]},
+  {"name":"sin","call":"sin(0.25)","labels":["numeric_expression"]},
+  {"name":"sqrt","call":"sqrt(25)","labels":["number"]},
+  {"name":"subtract","call":"subtract(5, 4)","labels":["value_1","value_2"]},
+  {"name":"tan","call":"tan(0.25)","labels":["numeric_expression"]},
+  {"name":"trunc","call":"trunc(4.75, 1)","labels":["number","[decimal_places]"]},
+  {"name":"current_time","call":"current_time()","labels":[]},
+  {"name":"date_floor","call":"date_floor(_time, \"d\", \"UTC\")","labels":["timestamp_field","time_unit","[time_zone]"]},
+  {"name":"extract_time","call":"extract_time(_time, \"HOUR\")","labels":["timestamp","part"]}
+]

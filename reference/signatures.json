@@ -1,0 +1,4101 @@
+{
+  "schemaVersion": 3,
+  "policy": "Reviewed source-backed forms; only explicitly verified positional arities authorize argument-count checks. Partial forms never authorize arity/type rejection; runtime behavior remains unverified.",
+  "functions": [
+    {
+      "name": "lowercase",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "lowercase-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/lowercase",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "arrayfilter",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "arrayfilter-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "array",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "condition",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayfilter",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "arrayfilter-placeholder-comparison",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": false,
+          "syntaxKind": "special",
+          "syntaxLabel": "arrayfilter(array, \"@element\" comparison value)",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayfilter",
+          "checked": "2026-10-26",
+          "callCount": {
+            "min": 2,
+            "max": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "arrayindex",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "arrayindex-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "array",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "index",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayindex",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "concat",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "concat-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "string2",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "strings",
+              "optional": true,
+              "repeat": true
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/concat",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "coalesce",
+      "status": "partial",
+      "summary": "Parameter hints follow the published variadic syntax; its minimum argument count remains unverified. No count rejection is enabled.",
+      "forms": [
+        {
+          "id": "coalesce-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "field1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "field2",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "fields",
+              "optional": true,
+              "repeat": true
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/coalesce",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "json_extract_scalar",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "json_extract_scalar-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "json_object_formatted_string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "json_path",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract_scalar",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "json_extract_scalar-arrow",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": false,
+          "syntaxKind": "special",
+          "syntaxLabel": "json_string -> path",
+          "invocation": "infix",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract_scalar",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "timestamp_diff",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "timestamp_diff-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "timestamp1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "timestamp2",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "part",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/timestamp_diff",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "to_string",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "to_string-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_string",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "uppercase",
+      "status": "verified",
+      "summary": "Converts text to uppercase.",
+      "forms": [
+        {
+          "id": "uppercase-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/uppercase",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "trim",
+      "status": "verified",
+      "summary": "Trims characters from both ends.",
+      "forms": [
+        {
+          "id": "trim-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "trim_characters",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/trim",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "ltrim",
+      "status": "verified",
+      "summary": "Trims characters from the beginning.",
+      "forms": [
+        {
+          "id": "ltrim-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "trim_characters",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/ltrim",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "rtrim",
+      "status": "verified",
+      "summary": "Trims characters from the end.",
+      "forms": [
+        {
+          "id": "rtrim-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "trim_characters",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/rtrim",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "replace",
+      "status": "verified",
+      "summary": "Replaces matching text fragments.",
+      "forms": [
+        {
+          "id": "replace-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "old_substring",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "new_string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/replace",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "split",
+      "status": "verified",
+      "summary": "Splits text into parts.",
+      "forms": [
+        {
+          "id": "split-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "value",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "string_delimiter",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/split",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "len",
+      "status": "verified",
+      "summary": "Reports the length of text.",
+      "forms": [
+        {
+          "id": "len-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/len",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "to_float",
+      "status": "verified",
+      "summary": "Converts text to a floating-point value.",
+      "forms": [
+        {
+          "id": "to_float-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_float",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "to_integer",
+      "status": "verified",
+      "summary": "Converts text to an integer.",
+      "forms": [
+        {
+          "id": "to_integer-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_integer",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "to_number",
+      "status": "verified",
+      "summary": "Converts text to a numeric value.",
+      "forms": [
+        {
+          "id": "to_number-positional",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_number",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "convert_from_base_64",
+      "status": "verified",
+      "summary": "Decodes base64 text.",
+      "forms": [
+        {
+          "id": "convert_from_base_64-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "encoded_string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/convert_from_base_64",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "convert_to_base_64",
+      "status": "verified",
+      "summary": "Encodes text as base64.",
+      "forms": [
+        {
+          "id": "convert_to_base_64-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "input_string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/convert_to_base_64",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "extract_url_host",
+      "status": "verified",
+      "summary": "Extracts the host portion of a URL.",
+      "forms": [
+        {
+          "id": "extract_url_host-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "url_string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/extract_url_host",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "extract_url_pub_suffix",
+      "status": "verified",
+      "summary": "Extracts a URL's public suffix.",
+      "forms": [
+        {
+          "id": "extract_url_pub_suffix-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "url",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/extract_url_pub_suffix",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "extract_url_registered_domain",
+      "status": "verified",
+      "summary": "Extracts a URL's registered domain.",
+      "forms": [
+        {
+          "id": "extract_url_registered_domain-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "url",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/extract_url_registered_domain",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "format_string",
+      "status": "partial",
+      "forms": [
+        {
+          "id": "format_string-variable-slots",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": false,
+          "syntaxKind": "special",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/format_string",
+          "checked": "2026-10-26",
+          "syntaxLabel": "format_string(format_string, ...format_values)"
+        }
+      ],
+      "summary": "Formats supplied values; the required minimum and specifier matching remain unverified."
+    },
+    {
+      "name": "json_extract",
+      "status": "verified",
+      "summary": "Extracts a JSON object or array as text.",
+      "forms": [
+        {
+          "id": "json_extract-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "json_object_formatted_string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "json_path",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "json_extract-arrow",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": false,
+          "syntaxKind": "special",
+          "syntaxLabel": "json_string -> path{}",
+          "invocation": "infix",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "json_extract_array",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "json_extract_array-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "json_array_string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "json_path",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract_array",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "json_extract_array-arrow",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": false,
+          "syntaxKind": "special",
+          "syntaxLabel": "json_string -> path[]",
+          "invocation": "infix",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract_array",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "json_extract_scalar_array",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "json_extract_scalar_array-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "json_array_string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "json_path",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract_scalar_array",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "json_path_extract",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "json_path_extract-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "json_field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "json_path",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_path_extract",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "json_path_extract-arrow",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": false,
+          "syntaxKind": "special",
+          "syntaxLabel": "json_string ->-> json_path",
+          "invocation": "infix",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_path_extract",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "json_functions_reference",
+      "status": "blocked",
+      "forms": []
+    },
+    {
+      "name": "regexcapture",
+      "status": "partial",
+      "summary": "Named captures for parsing rules; unavailable in interactive Query Builder queries.",
+      "forms": [
+        {
+          "id": "regexcapture-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "pattern",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/regexcapture",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "regextract",
+      "status": "verified",
+      "summary": "Extracts a captured text fragment.",
+      "forms": [
+        {
+          "id": "regextract-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "regex_pattern",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/regextract",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "replex",
+      "status": "verified",
+      "summary": "Replaces text matched by a regular expression.",
+      "forms": [
+        {
+          "id": "replex-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "pattern",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "new_string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/replex",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "string_count",
+      "status": "verified",
+      "summary": "Counts matching text fragments.",
+      "forms": [
+        {
+          "id": "string_count-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "pattern",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/string_count",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "to_boolean",
+      "status": "verified",
+      "summary": "Converts text to a boolean value.",
+      "forms": [
+        {
+          "id": "to_boolean-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_boolean",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "to_json_string",
+      "status": "verified",
+      "summary": "Serializes a value as JSON text.",
+      "forms": [
+        {
+          "id": "to_json_string-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "data_type",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_json_string",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "md5",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "md5-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "input_string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/md5",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "sha1",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "sha1-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "input_string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sha1",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "sha256",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "sha256-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "input_string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sha256",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "sha512",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "sha512-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "input_string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sha512",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "array_all",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "array_all-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": false,
+          "syntaxKind": "special",
+          "syntaxLabel": "array_all(array, \"@element\" comparison value)",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/array_all",
+          "checked": "2026-10-26",
+          "callCount": {
+            "min": 2,
+            "max": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "array_any",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "array_any-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": false,
+          "syntaxKind": "special",
+          "syntaxLabel": "array_any(array, \"@element\" comparison value)",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/array_any",
+          "checked": "2026-10-26",
+          "callCount": {
+            "min": 2,
+            "max": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "array_length",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "array_length-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "array",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/array_length",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "arrayconcat",
+      "status": "verified",
+      "summary": "Concatenates array elements.",
+      "forms": [
+        {
+          "id": "arrayconcat-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "array1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "array2",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "array3",
+              "optional": true,
+              "repeat": true
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayconcat",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "arraycreate",
+      "status": "partial",
+      "summary": "Repeated element hints are display-only; the minimum element count remains unverified. No count, element-type or homogeneity checks are enabled.",
+      "forms": [
+        {
+          "id": "arraycreate-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "array_element",
+              "optional": false,
+              "repeat": true
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraycreate",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "arraydistinct",
+      "status": "blocked",
+      "forms": []
+    },
+    {
+      "name": "arrayindexof",
+      "status": "partial",
+      "forms": [
+        {
+          "id": "arrayindexof-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "array",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "condition",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayindexof",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "arrayindexof-placeholder-comparison",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": false,
+          "syntaxKind": "special",
+          "syntaxLabel": "arrayindexof(array, \"@element\" comparison value)",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayindexof",
+          "checked": "2026-10-26"
+        }
+      ],
+      "summary": "Displayed syntax includes a condition, but the parameter table marks it optional. Call counts remain unverified."
+    },
+    {
+      "name": "arraymap",
+      "status": "verified",
+      "summary": "Transforms array elements with an expression.",
+      "forms": [
+        {
+          "id": "arraymap-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "array",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "function",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraymap",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "arraymerge",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "arraymerge-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraymerge",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "arrayrange",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "arrayrange-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "array",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "start",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "end",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayrange",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "arraystring",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "arraystring-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "array",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "delimiter",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraystring",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "if",
+      "status": "partial",
+      "summary": "Short syntax and longer public examples coexist; extended argument counts and branching semantics remain unverified.",
+      "forms": [
+        {
+          "id": "if-extended-conditional-values",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": false,
+          "syntaxKind": "special",
+          "syntaxLabel": "if(condition, value, ...conditional_values)",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/if",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "if-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "boolean_expression",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "true_return_expression",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "false_return_expression",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/if",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "greatest",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "greatest-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "expression1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "expression2",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "expressions",
+              "optional": true,
+              "repeat": true
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/greatest",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "least",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "least-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "expression1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "expression2",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "expressions",
+              "optional": true,
+              "repeat": true
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/least",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "object_create",
+      "status": "partial",
+      "forms": [
+        {
+          "id": "object_create-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": false,
+          "syntaxKind": "special",
+          "syntaxLabel": "object_create(key1, value1, key2, value2, ...pairs)",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/object_create",
+          "checked": "2026-10-26"
+        }
+      ],
+      "summary": "Key/value pairs use a special form; minimum, key rules and pair validation remain unverified."
+    },
+    {
+      "name": "object_merge",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "object_merge-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "obj1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "obj2",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "objects",
+              "optional": true,
+              "repeat": true
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/object_merge",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "wildcard_match",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "wildcard_match-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string_value",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "wildcard_pattern",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/wildcard_match",
+          "checked": "2026-10-26"
+        }
+      ],
+      "summary": "Wildcard matching requires a Cortex XSIAM license that includes Cortex Cloud; availability is not checked locally."
+    },
+    {
+      "name": "incidr",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "incidr-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "ipv4_address_field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "cidr_ranges",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/incidr",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "incidr6",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "incidr6-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "ipv6_address_field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "cidr6_range",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/incidr6",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "acos",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "acos-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "numeric_expression",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/acos",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "add",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "add-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "value_1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "value_2",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/add",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "asin",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "asin-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "numeric_expression",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/asin",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "bitwise_and",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "bitwise_and-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "left_clause",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "right_clause",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_and",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "bitwise_or",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "bitwise_or-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "left_clause",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "right_clause",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_or",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "bitwise_sleft",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "bitwise_sleft-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "left_clause",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "right_clause",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_sleft",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "bitwise_sright",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "bitwise_sright-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "left_clause",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "right_clause",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_sright",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "bitwise_xor",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "bitwise_xor-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "left_clause",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "right_clause",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_xor",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "cbrt",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "cbrt-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cbrt",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "ceil",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "ceil-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/ceil",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "cos",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "cos-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "numeric_expression",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cos",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "cot",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "cot-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "numeric_expression",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cot",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "csc",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "csc-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "numeric_expression",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/csc",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "divide",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "divide-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "numerator",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "denominator",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/divide",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "exp",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "exp-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/exp",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "floor",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "floor-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/floor",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "ln",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "ln-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/ln",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "log",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "log-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "base",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/log",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "log10",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "log10-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/log10",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "mod",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "mod-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "dividend",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "divisor",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/mod",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "multiply",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "multiply-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "value_1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "value_2",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/multiply",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "pow",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "pow-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "base",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "exponent",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/pow",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "power",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "power-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "base",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "exponent",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/power",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "rand",
+      "status": "verified",
+      "summary": "Produces a random value.",
+      "forms": [
+        {
+          "id": "rand-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/rand",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "round",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "round-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "value",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/round",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "safe_add",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "safe_add-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "number2",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_add",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "safe_divide",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "safe_divide-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "dividend",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "divisor",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_divide",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "safe_multiply",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "safe_multiply-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "number2",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_multiply",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "safe_negate",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "safe_negate-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_negate",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "safe_subtract",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "safe_subtract-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "number2",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_subtract",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "sec",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "sec-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "numeric_expression",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sec",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "sign",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "sign-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sign",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "sin",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "sin-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "numeric_expression",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sin",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "sqrt",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "sqrt-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sqrt",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "subtract",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "subtract-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "value_1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "value_2",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/subtract",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "tan",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "tan-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "numeric_expression",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/tan",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "trunc",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "trunc-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "decimal_places",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/trunc",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "current_time",
+      "status": "verified",
+      "summary": "Returns the current time.",
+      "forms": [
+        {
+          "id": "current_time-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/current_time",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "date_floor",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "date_floor-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "timestamp_field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "time_unit",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "time_zone",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/date_floor",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "extract_time",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "extract_time-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "timestamp",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "part",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/extract_time",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "format_timestamp",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "format_timestamp-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "format_string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "timestamp_field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "time_zone",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/format_timestamp",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "parse_epoch",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "parse_epoch-two",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "format_string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "timestamp_field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/parse_epoch",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "parse_epoch-three",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "format_string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "timestamp_field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "time_zone",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/parse_epoch",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "parse_epoch-four",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "format_string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "timestamp_field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "time_zone",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "time_unit",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/parse_epoch",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "parse_timestamp",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "parse_timestamp-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "format_time_string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "time_string",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "time_zone",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/parse_timestamp",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "time_frame_end",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "time_frame_end-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/time_frame_end",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "timestamp_seconds",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "timestamp_seconds-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "integer",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/timestamp_seconds",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "to_epoch",
+      "status": "partial",
+      "forms": [
+        {
+          "id": "to_epoch-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "timestamp",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "time_unit",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "displayOnly",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_epoch",
+          "checked": "2026-10-26"
+        }
+      ],
+      "summary": "The required-table form has two slots; usage notes describe omitting the unit. Call counts remain unverified."
+    },
+    {
+      "name": "to_timestamp",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "to_timestamp-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "integer",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "units",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_timestamp",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "cosine_distance",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "cosine_distance-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "vector1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "vector2",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cosine_distance",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "euclidean_distance",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "euclidean_distance-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "vector1",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "vector2",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/euclidean_distance",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "hierarchy_match",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "hierarchy_match-path-and-id",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "path_segments",
+              "optional": true,
+              "repeat": false
+            },
+            {
+              "name": "id_path",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/hierarchy_match",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "hierarchy_match-id-shorthand",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "id_path",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/hierarchy_match",
+          "checked": "2026-10-26"
+        }
+      ],
+      "summary": "Matches an enabled organizational asset hierarchy; availability and path/ID semantics are not checked locally."
+    },
+    {
+      "name": "incidrlist",
+      "status": "blocked",
+      "forms": []
+    },
+    {
+      "name": "int_to_ip",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "int_to_ip-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "ipv4_integer",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/int_to_ip",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "ip_to_int",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "ip_to_int-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "ipv4_address",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/ip_to_int",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "is_ipv4",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "is_ipv4-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_ipv4",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "is_ipv6",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "is_ipv6-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_ipv6",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "is_known_private_ipv4",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "is_known_private_ipv4-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_known_private_ipv4",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "is_known_private_ipv6",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "is_known_private_ipv6-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "string",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_known_private_ipv6",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "is_sla_breached",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "is_sla_breached-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "sla_timer_field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_sla_breached",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "sla_time_remaining",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "sla_time_remaining-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "sla_timer_field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sla_time_remaining",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "range_bucket",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "range_bucket-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "value",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "boundaries",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/range_bucket",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "approx_count",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "approx_count-positional-0",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/approx_count",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "approx_quantiles",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "approx_quantiles-positional-0",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "distinct",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/approx_quantiles",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "approx_top",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "approx_top-counts",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "string_field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "number",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/approx_top",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "approx_top-weighted",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "string_field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "weight_string_field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/approx_top",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "avg",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "avg-comp",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/avg_with_comp_stage",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "avg-windowcomp",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/avg_with_windowcomp_stage",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "count",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "count-comp-rows",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/count_with_comp_stage",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "count-comp-field",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/count_with_comp_stage",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "count-windowcomp-rows",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/count_with_windowcomp_stage",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "count-windowcomp-field",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/count_with_windowcomp_stage",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "count_distinct",
+      "status": "blocked",
+      "forms": []
+    },
+    {
+      "name": "earliest",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "earliest-positional-0",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/earliest",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "first",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "first-positional-0",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/first",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "first_value",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "first_value-positional-0",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/first_value",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "lag",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "lag-positional-0",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "offset",
+              "optional": true,
+              "repeat": false
+            },
+            {
+              "name": "default_value",
+              "optional": true,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/lag",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "last",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "last-positional-0",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/last",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "last_value",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "last_value-positional-0",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/last_value",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "latest",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "latest-positional-0",
+          "contexts": [
+            "comp",
+            "windowcomp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/latest",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "list-comp",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/list_with_comp_stage",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "max",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "max-comp",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/max_with_comp_stage",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "max-windowcomp",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/max_with_windowcomp_stage",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "median",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "median-comp",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/median_with_comp_stage",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "median-windowcomp",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/median_with_windowcomp_stage",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "min",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "min-comp",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/min_with_comp_stage",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "min-windowcomp",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/min_with_windowcomp_stage",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "rank",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "rank-windowcomp",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/rank_with_windowcomp_stage",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "row_number",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "row_number-windowcomp",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/row_number_with_windowcomp_stage",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "stddev_population",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "stddev_population-comp",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_population_with_comp_stage",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "stddev_population-windowcomp",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_population_with_windowcomp_stage",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "stddev_sample",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "stddev_sample-comp",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_sample_with_comp_stage",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "stddev_sample-windowcomp",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_sample_with_windowcomp_stage",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "sum",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "sum-comp",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sum_with_comp_stage",
+          "checked": "2026-10-26"
+        },
+        {
+          "id": "sum-windowcomp",
+          "contexts": [
+            "windowcomp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sum_with_windowcomp_stage",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "values",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "values-positional-0",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/values",
+          "checked": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "name": "var",
+      "status": "verified",
+      "forms": [
+        {
+          "id": "var-positional-0",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "field",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/var",
+          "checked": "2026-10-26"
+        }
+      ]
+    }
+  ]
+}

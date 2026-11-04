@@ -1,0 +1,1881 @@
+{
+  "schemaVersion": 1,
+  "catalogueChecked": "2026-10-25",
+  "functions": [
+    {
+      "name": "acos",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/acos"
+      ],
+      "reason": "Complete public positional syntax and required table agree on exactly one argument, without an alternate call form on the reviewed page. Counts only; types/domain/radian/NaN/infinity/null/runtime prose remain unverified.",
+      "reviewBatch": "R03-arity-04",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "add",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/add"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no infix precedence, arithmetic/domain, zero division, overflow, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-11",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "approx_count",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "comp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/approx_count"
+      ],
+      "reason": "Reviewed context-specific syntax, required/optional/default table and consistent examples establish positional counts, including zero/one count forms and documented approximate optional slots. Counts only; no type, value bounds, weight/distinct/null, approximation/statistics, grouping/window or runtime validation.",
+      "reviewBatch": "R03-arity-18",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "approx_quantiles",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "comp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/approx_quantiles"
+      ],
+      "reason": "Reviewed context-specific syntax, required/optional/default table and consistent examples establish positional counts, including zero/one count forms and documented approximate optional slots. Counts only; no type, value bounds, weight/distinct/null, approximation/statistics, grouping/window or runtime validation.",
+      "reviewBatch": "R03-arity-18",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "approx_top",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "comp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/approx_top"
+      ],
+      "reason": "Reviewed context-specific syntax, required/optional/default table and consistent examples establish positional counts, including zero/one count forms and documented approximate optional slots. Counts only; no type, value bounds, weight/distinct/null, approximation/statistics, grouping/window or runtime validation.",
+      "reviewBatch": "R03-arity-18",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "array_all",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/array_all"
+      ],
+      "reason": "All documented call forms contain exactly two comma-separated direct arguments. Special callback components remain one second argument, not invented parameter slots. Counts only; callback grammar, types, empty/null behavior and runtime remain unverified.",
+      "reviewBatch": "R03-arity-20",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "array_any",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/array_any"
+      ],
+      "reason": "All documented call forms contain exactly two comma-separated direct arguments. Special callback components remain one second argument, not invented parameter slots. Counts only; callback grammar, types, empty/null behavior and runtime remain unverified.",
+      "reviewBatch": "R03-arity-20",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "array_length",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/array_length"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no address/private-space/length/type/null/runtime validation.",
+      "reviewBatch": "R03-arity-06",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "arrayconcat",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayconcat"
+      ],
+      "reason": "Public syntax, required table and consistent examples establish two required arguments plus optional repeated array slots. Counts only; no homogeneity, element or runtime validation.",
+      "reviewBatch": "R03-arity-07",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "arraycreate",
+      "status": "partial",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraycreate"
+      ],
+      "reason": "Rendered syntax lists two elements, while per-element required prose does not settle the minimum element count. Retain display-only help; no lower-bound or homogeneity/type validation.",
+      "reviewBatch": "R03-arity-03",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "arraydistinct",
+      "status": "blocked",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraydistinct"
+      ],
+      "reason": "Catalogue/page title names arraydistinct but the inspected syntax block spells arraydistinc. Resolve the public spelling conflict before offering a signature; do not silently correct the source.",
+      "reviewBatch": "R03b-03",
+      "checked": "2026-10-25"
+    },
+    {
+      "name": "arrayfilter",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayfilter"
+      ],
+      "reason": "All documented call forms contain exactly two comma-separated direct arguments. Special callback components remain one second argument, not invented parameter slots. Counts only; callback grammar, types, empty/null behavior and runtime remain unverified.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-20"
+    },
+    {
+      "name": "arrayindex",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayindex"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish 2 positional slots. Counts only; no callback, array element, index/bounds, type, JSON or runtime validation.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-07"
+    },
+    {
+      "name": "arrayindexof",
+      "status": "partial",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayindexof"
+      ],
+      "reason": "Two-argument syntax conflicts with optional condition/placeholder components in the public parameter table. Retain partial display-only forms and an explicit conflict note; do not reject omitted conditions or validate callback semantics.",
+      "reviewBatch": "R03-arity-20",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "arraymap",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraymap"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish 2 positional slots. Counts only; no callback, array element, index/bounds, type, JSON or runtime validation.",
+      "reviewBatch": "R03-arity-07",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "arraymerge",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraymerge"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish 1 positional slots. Counts only; no callback, array element, index/bounds, type, JSON or runtime validation.",
+      "reviewBatch": "R03-arity-07",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "arrayrange",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arrayrange"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish 3 positional slots. Counts only; no callback, array element, index/bounds, type, JSON or runtime validation.",
+      "reviewBatch": "R03-arity-07",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "arraystring",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/arraystring"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish 2 positional slots. Counts only; no callback, array element, index/bounds, type, JSON or runtime validation.",
+      "reviewBatch": "R03-arity-07",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "asin",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/asin"
+      ],
+      "reason": "Complete public positional syntax and required table agree on exactly one argument, without an alternate call form on the reviewed page. Counts only; types/domain/radian/NaN/infinity/null/runtime prose remain unverified.",
+      "reviewBatch": "R03-arity-04",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "avg",
+      "status": "verified",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/avg_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/avg_with_windowcomp_stage"
+      ],
+      "reason": "Each declared comp/windowcomp context has explicit single-field call syntax and a required table row, with consistent target examples. Counts only in those contexts; no input types, aggregation/null/order, grouping/window frame, implicit output or runtime validation.",
+      "reviewBatch": "R03-arity-17",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "bitwise_and",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_and"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no bit/shift/signedness, vector element/length/zero, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-12",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "bitwise_or",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_or"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no bit/shift/signedness, vector element/length/zero, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-12",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "bitwise_sleft",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_sleft"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no bit/shift/signedness, vector element/length/zero, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-12",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "bitwise_sright",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_sright"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no bit/shift/signedness, vector element/length/zero, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-12",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "bitwise_xor",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/bitwise_xor"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no bit/shift/signedness, vector element/length/zero, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-12",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "cbrt",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cbrt"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no domain, radians, overflow, rounding, NaN/infinity, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-10",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "ceil",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/ceil"
+      ],
+      "reason": "Reviewed complete public positional syntax and required-parameter table: exactly 1 argument(s), with no alternate call form on the reviewed page. Counts only; type/domain/NaN/overflow and alias-runtime behavior remain unverified.",
+      "reviewBatch": "R03-arity-02",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "coalesce",
+      "status": "partial",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/coalesce"
+      ],
+      "reason": "Public syntax lists two leading fields, but arbitrary-list prose does not explicitly establish a minimum count. Retain display-only help; do not reject zero/one-argument calls.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-03"
+    },
+    {
+      "name": "concat",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/concat"
+      ],
+      "reason": "Public syntax and parameter prose explicitly require two or more positional arguments. Counts only; string conversion/null/runtime behavior remain unverified.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-03"
+    },
+    {
+      "name": "convert_from_base_64",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/convert_from_base_64"
+      ],
+      "reason": "Complete public syntax, single required parameter and consistent target examples establish one positional slot. Counts only; no hashing, encoding/decoding, numeric conversion, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-08",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "convert_to_base_64",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/convert_to_base_64"
+      ],
+      "reason": "Complete public syntax, single required parameter and consistent target examples establish one positional slot. Counts only; no hashing, encoding/decoding, numeric conversion, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-08",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "cos",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cos"
+      ],
+      "reason": "Complete public positional syntax and required table agree on exactly one argument, without an alternate call form on the reviewed page. Counts only; types/domain/radian/NaN/infinity/null/runtime prose remain unverified.",
+      "reviewBatch": "R03-arity-04",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "cosine_distance",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cosine_distance"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no bit/shift/signedness, vector element/length/zero, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-12",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "cot",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cot"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no domain, radians, overflow, rounding, NaN/infinity, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-10",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "count",
+      "status": "verified",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/count_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/count_with_windowcomp_stage"
+      ],
+      "reason": "Reviewed context-specific syntax, required/optional/default table and consistent examples establish positional counts, including zero/one count forms and documented approximate optional slots. Counts only; no type, value bounds, weight/distinct/null, approximation/statistics, grouping/window or runtime validation.",
+      "reviewBatch": "R03-arity-18",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "count_distinct",
+      "status": "blocked",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/count_distinct"
+      ],
+      "reason": "Rendered public syntax shows an empty call while the parameter table requires a field. Comp context is explicit, but a complete positional form needs source clarification. Keep link-only help.",
+      "reviewBatch": "R03d-07",
+      "checked": "2026-10-25"
+    },
+    {
+      "name": "csc",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/csc"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no domain, radians, overflow, rounding, NaN/infinity, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-10",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "current_time",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/current_time"
+      ],
+      "reason": "Reviewed explicit empty positional syntax and no-parameter behavior. No alternative call form in the reviewed page. Arity only; return type and runtime behavior remain unverified.",
+      "reviewBatch": "R03-arity-01",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "date_floor",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/date_floor"
+      ],
+      "reason": "Complete public syntax/required-optional table and consistent target examples establish the reviewed positional counts. Counts only; no timeframe, timestamp/unit/zone, calendar, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-15",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "divide",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/divide"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no infix precedence, arithmetic/domain, zero division, overflow, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-11",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "earliest",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "comp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/earliest"
+      ],
+      "reason": "Each declared comp/windowcomp context has explicit single-field call syntax and a required table row, with consistent target examples. Counts only in those contexts; no input types, aggregation/null/order, grouping/window frame, implicit output or runtime validation.",
+      "reviewBatch": "R03-arity-17",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "euclidean_distance",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/euclidean_distance"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no bit/shift/signedness, vector element/length/zero, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-12",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "exp",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/exp"
+      ],
+      "reason": "Reviewed complete public positional syntax and required-parameter table: exactly 1 argument(s), with no alternate call form on the reviewed page. Counts only; type/domain/NaN/overflow and alias-runtime behavior remain unverified.",
+      "reviewBatch": "R03-arity-02",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "extract_time",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/extract_time"
+      ],
+      "reason": "Complete public syntax/required-optional table and consistent target examples establish the reviewed positional counts. Counts only; no timeframe, timestamp/unit/zone, calendar, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-15",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "extract_url_host",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/extract_url_host"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no URL/suffix/address validity, signed-range conversion, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-09",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "extract_url_pub_suffix",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/extract_url_pub_suffix"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no URL/suffix/address validity, signed-range conversion, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-09",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "extract_url_registered_domain",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/extract_url_registered_domain"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no URL/suffix/address validity, signed-range conversion, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-09",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "first",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "comp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/first"
+      ],
+      "reason": "Explicit contextual call syntax and required/optional/default table establish positional counts; fenced examples agree. Lag optional slots are explicit in its table/default prose. Counts only; no ordering/ties, offset/default, mandatory sort/frame, null/type or runtime validation.",
+      "reviewBatch": "R03-arity-19",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "first_value",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/first_value"
+      ],
+      "reason": "Explicit contextual call syntax and required/optional/default table establish positional counts; fenced examples agree. Lag optional slots are explicit in its table/default prose. Counts only; no ordering/ties, offset/default, mandatory sort/frame, null/type or runtime validation.",
+      "reviewBatch": "R03-arity-19",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "floor",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/floor"
+      ],
+      "reason": "Reviewed complete public positional syntax and required-parameter table: exactly 1 argument(s), with no alternate call form on the reviewed page. Counts only; type/domain/NaN/overflow and alias-runtime behavior remain unverified.",
+      "reviewBatch": "R03-arity-02",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "format_string",
+      "status": "partial",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/format_string"
+      ],
+      "reason": "A public example uses one format value, contradicting the old two-leading-value display minimum. Zero-specifier prose does not settle zero-value calls. Keep unknown arity and a variable-slot display; no invented active parameter, minimum or format validation.",
+      "reviewBatch": "R03-arity-13",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "format_timestamp",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/format_timestamp"
+      ],
+      "reason": "Public syntax and optional-timezone prose, checked against two/three-argument examples, establish two required plus one optional positional slot. Counts only; format/timezone/type/runtime behavior remain unverified.",
+      "reviewBatch": "R03-arity-05",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "greatest",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/greatest"
+      ],
+      "reason": "Public syntax, explicit required/optional/minimum prose and consistent target examples establish the reviewed positional counts. Counts only; no comparison/type, object merge, hierarchy/path/ID/availability, boundary sorting, timer/SLA or runtime validation.",
+      "reviewBatch": "R03-arity-16",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "hierarchy_match",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/hierarchy_match"
+      ],
+      "reason": "Public syntax, explicit required/optional/minimum prose and consistent target examples establish the reviewed positional counts. Counts only; no comparison/type, object merge, hierarchy/path/ID/availability, boundary sorting, timer/SLA or runtime validation.",
+      "reviewBatch": "R03-arity-16",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "if",
+      "status": "partial",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/if"
+      ],
+      "reason": "Short syntax lists two/three slots; public examples also contain five/six arguments. Preserve short-form hints and add unknown-arity extended display first as the fallback. No upper-bound, condition/type, branching or runtime rejection.",
+      "reviewBatch": "R03-arity-16",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "incidr",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/incidr"
+      ],
+      "reason": "Documented operand-position function syntax and required table establish two positional slots. Parenthesized word-operator examples are a separate form, not one-argument calls. Counts only; no address/CIDR/type/runtime validation.",
+      "reviewBatch": "R03-arity-06",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "incidr6",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/incidr6"
+      ],
+      "reason": "Documented operand-position function syntax and required table establish two positional slots. Parenthesized word-operator examples are a separate form, not one-argument calls. Counts only; no address/CIDR/type/runtime validation.",
+      "reviewBatch": "R03-arity-06",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "incidrlist",
+      "status": "blocked",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/incidrlist"
+      ],
+      "reason": "Catalogue/page title uses incidrlist but the syntax block spells incidrlis. Keep name/link support pending source spelling resolution.",
+      "reviewBatch": "R03c-d-06",
+      "checked": "2026-10-25"
+    },
+    {
+      "name": "int_to_ip",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/int_to_ip"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no URL/suffix/address validity, signed-range conversion, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-09",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "ip_to_int",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/ip_to_int"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no URL/suffix/address validity, signed-range conversion, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-09",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "is_ipv4",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_ipv4"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no address/private-space/length/type/null/runtime validation.",
+      "reviewBatch": "R03-arity-06",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "is_ipv6",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_ipv6"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no address/private-space/length/type/null/runtime validation.",
+      "reviewBatch": "R03-arity-06",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "is_known_private_ipv4",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_known_private_ipv4"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no address/private-space/length/type/null/runtime validation.",
+      "reviewBatch": "R03-arity-06",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "is_known_private_ipv6",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_known_private_ipv6"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no address/private-space/length/type/null/runtime validation.",
+      "reviewBatch": "R03-arity-06",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "is_sla_breached",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/is_sla_breached"
+      ],
+      "reason": "Public syntax, explicit required/optional/minimum prose and consistent target examples establish the reviewed positional counts. Counts only; no comparison/type, object merge, hierarchy/path/ID/availability, boundary sorting, timer/SLA or runtime validation.",
+      "reviewBatch": "R03-arity-16",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "json_extract",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract"
+      ],
+      "reason": "Complete public call syntax, two required table rows and consistent target calls establish two positional slots. Infix alternatives remain display-only and outside call validation. No JSON/JSONPath, output/type, null or runtime validation.",
+      "reviewBatch": "R03-arity-14",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "json_extract_array",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract_array"
+      ],
+      "reason": "Complete public call syntax, two required table rows and consistent target calls establish two positional slots. Infix alternatives remain display-only and outside call validation. No JSON/JSONPath, output/type, null or runtime validation.",
+      "reviewBatch": "R03-arity-14",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "json_extract_scalar",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract_scalar"
+      ],
+      "reason": "Complete public call syntax, two required table rows and consistent target calls establish two positional slots. Infix alternatives remain display-only and outside call validation. No JSON/JSONPath, output/type, null or runtime validation.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-14"
+    },
+    {
+      "name": "json_extract_scalar_array",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_extract_scalar_array"
+      ],
+      "reason": "Complete public call syntax, two required table rows and consistent target calls establish two positional slots. Infix alternatives remain display-only and outside call validation. No JSON/JSONPath, output/type, null or runtime validation.",
+      "reviewBatch": "R03-arity-14",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "json_functions_reference",
+      "status": "blocked",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_functions_reference"
+      ],
+      "reason": "Catalogue points to a JSON overview whose syntax describes json_extract, not a callable json_functions_reference function. Retain catalogue name/link; do not invent a signature.",
+      "reviewBatch": "R03a-02",
+      "checked": "2026-10-25"
+    },
+    {
+      "name": "json_path_extract",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_path_extract"
+      ],
+      "reason": "Complete public call syntax, two required table rows and consistent target calls establish two positional slots. Infix alternatives remain display-only and outside call validation. No JSON/JSONPath, output/type, null or runtime validation.",
+      "reviewBatch": "R03-arity-14",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "lag",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/lag"
+      ],
+      "reason": "Explicit contextual call syntax and required/optional/default table establish positional counts; fenced examples agree. Lag optional slots are explicit in its table/default prose. Counts only; no ordering/ties, offset/default, mandatory sort/frame, null/type or runtime validation.",
+      "reviewBatch": "R03-arity-19",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "last",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "comp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/last"
+      ],
+      "reason": "Explicit contextual call syntax and required/optional/default table establish positional counts; fenced examples agree. Lag optional slots are explicit in its table/default prose. Counts only; no ordering/ties, offset/default, mandatory sort/frame, null/type or runtime validation.",
+      "reviewBatch": "R03-arity-19",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "last_value",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/last_value"
+      ],
+      "reason": "Explicit contextual call syntax and required/optional/default table establish positional counts; fenced examples agree. Lag optional slots are explicit in its table/default prose. Counts only; no ordering/ties, offset/default, mandatory sort/frame, null/type or runtime validation.",
+      "reviewBatch": "R03-arity-19",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "latest",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/latest"
+      ],
+      "reason": "Each declared comp/windowcomp context has explicit single-field call syntax and a required table row, with consistent target examples. Counts only in those contexts; no input types, aggregation/null/order, grouping/window frame, implicit output or runtime validation.",
+      "reviewBatch": "R03-arity-17",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "least",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/least"
+      ],
+      "reason": "Public syntax, explicit required/optional/minimum prose and consistent target examples establish the reviewed positional counts. Counts only; no comparison/type, object merge, hierarchy/path/ID/availability, boundary sorting, timer/SLA or runtime validation.",
+      "reviewBatch": "R03-arity-16",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "len",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/len"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no address/private-space/length/type/null/runtime validation.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-06"
+    },
+    {
+      "name": "list",
+      "status": "verified",
+      "contexts": [
+        "comp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/list_with_comp_stage"
+      ],
+      "reason": "Each declared comp/windowcomp context has explicit single-field call syntax and a required table row, with consistent target examples. Counts only in those contexts; no input types, aggregation/null/order, grouping/window frame, implicit output or runtime validation.",
+      "reviewBatch": "R03-arity-17",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "ln",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/ln"
+      ],
+      "reason": "Complete public positional syntax and required table agree on exactly one argument, without an alternate call form on the reviewed page. Counts only; types/domain/radian/NaN/infinity/null/runtime prose remain unverified.",
+      "reviewBatch": "R03-arity-04",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "log",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/log"
+      ],
+      "reason": "Reviewed complete public positional syntax and required-parameter table: exactly 2 argument(s), with no alternate call form on the reviewed page. Counts only; type/domain/NaN/overflow and alias-runtime behavior remain unverified.",
+      "reviewBatch": "R03-arity-02",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "log10",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/log10"
+      ],
+      "reason": "Complete public positional syntax and required table agree on exactly one argument, without an alternate call form on the reviewed page. Counts only; types/domain/radian/NaN/infinity/null/runtime prose remain unverified.",
+      "reviewBatch": "R03-arity-04",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "lowercase",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/lowercase"
+      ],
+      "reason": "Reviewed complete public positional syntax and required-parameter table: exactly one argument. No alternative call form in the reviewed page. Arity only; argument types and runtime behavior remain unverified.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-01"
+    },
+    {
+      "name": "ltrim",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/ltrim"
+      ],
+      "reason": "Public syntax and required table agree on one required string slot and one optional trim-character slot. Counts only; types/default trimming behavior remain unverified.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-03"
+    },
+    {
+      "name": "max",
+      "status": "verified",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/max_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/max_with_windowcomp_stage"
+      ],
+      "reason": "Each declared comp/windowcomp context has explicit single-field call syntax and a required table row, with consistent target examples. Counts only in those contexts; no input types, aggregation/null/order, grouping/window frame, implicit output or runtime validation.",
+      "reviewBatch": "R03-arity-17",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "md5",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/md5"
+      ],
+      "reason": "Complete public syntax, single required parameter and consistent target examples establish one positional slot. Counts only; no hashing, encoding/decoding, numeric conversion, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-08",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "median",
+      "status": "verified",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/median_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/median_with_windowcomp_stage"
+      ],
+      "reason": "Each declared comp/windowcomp context has explicit single-field call syntax and a required table row, with consistent target examples. Counts only in those contexts; no input types, aggregation/null/order, grouping/window frame, implicit output or runtime validation.",
+      "reviewBatch": "R03-arity-17",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "min",
+      "status": "verified",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/min_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/min_with_windowcomp_stage"
+      ],
+      "reason": "Each declared comp/windowcomp context has explicit single-field call syntax and a required table row, with consistent target examples. Counts only in those contexts; no input types, aggregation/null/order, grouping/window frame, implicit output or runtime validation.",
+      "reviewBatch": "R03-arity-17",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "mod",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/mod"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no infix precedence, arithmetic/domain, zero division, overflow, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-11",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "multiply",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/multiply"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no infix precedence, arithmetic/domain, zero division, overflow, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-11",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "object_create",
+      "status": "partial",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/object_create"
+      ],
+      "reason": "Public prose requires key/value pairs, but the positional min/max model cannot express repeated pairs or prove a minimum. Retain special display-only help; no parity, key/type, merge or runtime validation.",
+      "reviewBatch": "R03-arity-16",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "object_merge",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/object_merge"
+      ],
+      "reason": "Public syntax, explicit required/optional/minimum prose and consistent target examples establish the reviewed positional counts. Counts only; no comparison/type, object merge, hierarchy/path/ID/availability, boundary sorting, timer/SLA or runtime validation.",
+      "reviewBatch": "R03-arity-16",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "parse_epoch",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/parse_epoch"
+      ],
+      "reason": "Public syntax explicitly lists two/three/four-slot positional overloads; required/optional table and examples agree. Counts only; no format/timezone/unit/order/type/runtime validation.",
+      "reviewBatch": "R03-arity-15",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "parse_timestamp",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/parse_timestamp"
+      ],
+      "reason": "Public syntax and optional-timezone prose, checked against two/three-argument examples, establish two required plus one optional positional slot. Counts only; format/timezone/type/runtime behavior remain unverified.",
+      "reviewBatch": "R03-arity-05",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "pow",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/pow"
+      ],
+      "reason": "Reviewed complete public positional syntax and required-parameter table: exactly 2 argument(s), with no alternate call form on the reviewed page. Counts only; type/domain/NaN/overflow and alias-runtime behavior remain unverified.",
+      "reviewBatch": "R03-arity-02",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "power",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/power"
+      ],
+      "reason": "Reviewed complete public positional syntax and required-parameter table: exactly 2 argument(s), with no alternate call form on the reviewed page. Counts only; type/domain/NaN/overflow and alias-runtime behavior remain unverified.",
+      "reviewBatch": "R03-arity-02",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "rand",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/rand"
+      ],
+      "reason": "Reviewed explicit empty positional syntax and no-parameter behavior. No alternative call form in the reviewed page. Arity only; return type and runtime behavior remain unverified.",
+      "reviewBatch": "R03-arity-01",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "range_bucket",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/range_bucket"
+      ],
+      "reason": "Public syntax, explicit required/optional/minimum prose and consistent target examples establish the reviewed positional counts. Counts only; no comparison/type, object merge, hierarchy/path/ID/availability, boundary sorting, timer/SLA or runtime validation.",
+      "reviewBatch": "R03-arity-16",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "rank",
+      "status": "verified",
+      "contexts": [
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/rank_with_windowcomp_stage"
+      ],
+      "reason": "Explicit contextual call syntax and required/optional/default table establish positional counts; fenced examples agree. Lag optional slots are explicit in its table/default prose. Counts only; no ordering/ties, offset/default, mandatory sort/frame, null/type or runtime validation.",
+      "reviewBatch": "R03-arity-19",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "regexcapture",
+      "status": "partial",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/regexcapture"
+      ],
+      "reason": "Public page explicitly restricts regexcapture to parsing rules, which current query contexts do not model. Keep display-only help with an availability note; no arity, stage or pattern rejection.",
+      "reviewBatch": "R03-arity-13",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "regextract",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/regextract"
+      ],
+      "reason": "Complete public syntax, required table and consistent target examples establish 2 positional slots. Counts only; no regex/pattern execution, capture/replacement, stage/license availability, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-13",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "replace",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/replace"
+      ],
+      "reason": "Complete public syntax and required table establish three positional arguments. Counts only; operand types, quoting requirements and replacement semantics remain unverified.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-03"
+    },
+    {
+      "name": "replex",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/replex"
+      ],
+      "reason": "Complete public syntax, required table and consistent target examples establish 3 positional slots. Counts only; no regex/pattern execution, capture/replacement, stage/license availability, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-13",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "round",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/round"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no domain, radians, overflow, rounding, NaN/infinity, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-10",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "row_number",
+      "status": "verified",
+      "contexts": [
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/row_number_with_windowcomp_stage"
+      ],
+      "reason": "Explicit contextual call syntax and required/optional/default table establish positional counts; fenced examples agree. Lag optional slots are explicit in its table/default prose. Counts only; no ordering/ties, offset/default, mandatory sort/frame, null/type or runtime validation.",
+      "reviewBatch": "R03-arity-19",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "rtrim",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/rtrim"
+      ],
+      "reason": "Public syntax and required table agree on one required string slot and one optional trim-character slot. Counts only; types/default trimming behavior remain unverified.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-03"
+    },
+    {
+      "name": "safe_add",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_add"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no infix precedence, arithmetic/domain, zero division, overflow, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-11",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "safe_divide",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_divide"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no infix precedence, arithmetic/domain, zero division, overflow, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-11",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "safe_multiply",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_multiply"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no infix precedence, arithmetic/domain, zero division, overflow, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-11",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "safe_negate",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_negate"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no domain, radians, overflow, rounding, NaN/infinity, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-10",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "safe_subtract",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/safe_subtract"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no infix precedence, arithmetic/domain, zero division, overflow, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-11",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "sec",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sec"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no domain, radians, overflow, rounding, NaN/infinity, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-10",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "sha1",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sha1"
+      ],
+      "reason": "Complete public syntax, single required parameter and consistent target examples establish one positional slot. Counts only; no hashing, encoding/decoding, numeric conversion, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-08",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "sha256",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sha256"
+      ],
+      "reason": "Complete public syntax, single required parameter and consistent target examples establish one positional slot. Counts only; no hashing, encoding/decoding, numeric conversion, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-08",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "sha512",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sha512"
+      ],
+      "reason": "Complete public syntax, single required parameter and consistent target examples establish one positional slot. Counts only; no hashing, encoding/decoding, numeric conversion, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-08",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "sign",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sign"
+      ],
+      "reason": "Complete public syntax/required table and consistent target examples establish one positional slot. Counts only; no domain, radians, overflow, rounding, NaN/infinity, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-10",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "sin",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sin"
+      ],
+      "reason": "Complete public positional syntax and required table agree on exactly one argument, without an alternate call form on the reviewed page. Counts only; types/domain/radian/NaN/infinity/null/runtime prose remain unverified.",
+      "reviewBatch": "R03-arity-04",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "sla_time_remaining",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sla_time_remaining"
+      ],
+      "reason": "Public syntax, explicit required/optional/minimum prose and consistent target examples establish the reviewed positional counts. Counts only; no comparison/type, object merge, hierarchy/path/ID/availability, boundary sorting, timer/SLA or runtime validation.",
+      "reviewBatch": "R03-arity-16",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "split",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/split"
+      ],
+      "reason": "Public syntax, optional parameter/default table and agreeing examples establish one required plus one optional slot. Counts only; no delimiter/type/null/runtime validation.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-13"
+    },
+    {
+      "name": "sqrt",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sqrt"
+      ],
+      "reason": "Reviewed complete public positional syntax and required-parameter table: exactly 1 argument(s), with no alternate call form on the reviewed page. Counts only; type/domain/NaN/overflow and alias-runtime behavior remain unverified.",
+      "reviewBatch": "R03-arity-02",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "stddev_population",
+      "status": "verified",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_population_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_population_with_windowcomp_stage"
+      ],
+      "reason": "Reviewed context-specific syntax, required/optional/default table and consistent examples establish positional counts, including zero/one count forms and documented approximate optional slots. Counts only; no type, value bounds, weight/distinct/null, approximation/statistics, grouping/window or runtime validation.",
+      "reviewBatch": "R03-arity-18",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "stddev_sample",
+      "status": "verified",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_sample_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/stddev_sample_with_windowcomp_stage"
+      ],
+      "reason": "Reviewed context-specific syntax, required/optional/default table and consistent examples establish positional counts, including zero/one count forms and documented approximate optional slots. Counts only; no type, value bounds, weight/distinct/null, approximation/statistics, grouping/window or runtime validation.",
+      "reviewBatch": "R03-arity-18",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "string_count",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/string_count"
+      ],
+      "reason": "Complete public syntax, required table and consistent target examples establish 2 positional slots. Counts only; no regex/pattern execution, capture/replacement, stage/license availability, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-13",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "subtract",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/subtract"
+      ],
+      "reason": "Complete public syntax, two required table rows and consistent target examples establish two positional slots. Counts only; no infix precedence, arithmetic/domain, zero division, overflow, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-11",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "sum",
+      "status": "verified",
+      "contexts": [
+        "comp",
+        "windowcomp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sum_with_comp_stage",
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sum_with_windowcomp_stage"
+      ],
+      "reason": "Each declared comp/windowcomp context has explicit single-field call syntax and a required table row, with consistent target examples. Counts only in those contexts; no input types, aggregation/null/order, grouping/window frame, implicit output or runtime validation.",
+      "reviewBatch": "R03-arity-17",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "tan",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/tan"
+      ],
+      "reason": "Complete public positional syntax and required table agree on exactly one argument, without an alternate call form on the reviewed page. Counts only; types/domain/radian/NaN/infinity/null/runtime prose remain unverified.",
+      "reviewBatch": "R03-arity-04",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "time_frame_end",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/time_frame_end"
+      ],
+      "reason": "Complete public syntax/required-optional table and consistent target examples establish the reviewed positional counts. Counts only; no timeframe, timestamp/unit/zone, calendar, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-15",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "timestamp_diff",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/timestamp_diff"
+      ],
+      "reason": "Complete public syntax/required-optional table and consistent target examples establish the reviewed positional counts. Counts only; no timeframe, timestamp/unit/zone, calendar, type, null or runtime validation.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-15"
+    },
+    {
+      "name": "timestamp_seconds",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/timestamp_seconds"
+      ],
+      "reason": "Complete public syntax/required-optional table and consistent target examples establish the reviewed positional counts. Counts only; no timeframe, timestamp/unit/zone, calendar, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-15",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "to_boolean",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_boolean"
+      ],
+      "reason": "Complete public syntax and required table, checked against all target example calls, establish exactly one positional argument. Counts only; conversion, null, serialization, rounding and runtime semantics remain unverified.",
+      "reviewBatch": "R03-arity-05",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "to_epoch",
+      "status": "partial",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_epoch"
+      ],
+      "reason": "Required unit in syntax/table conflicts with usage notes describing an omitted-unit default. Preserve display-only required-table help with an explicit conflict note; do not reject one-argument calls or infer unit/type/runtime behavior.",
+      "reviewBatch": "R03-arity-15",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "to_float",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_float"
+      ],
+      "reason": "Complete public syntax, single required parameter and consistent target examples establish one positional slot. Counts only; no hashing, encoding/decoding, numeric conversion, type, null or runtime validation.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-08"
+    },
+    {
+      "name": "to_integer",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_integer"
+      ],
+      "reason": "Complete public syntax and required table, checked against all target example calls, establish exactly one positional argument. Counts only; conversion, null, serialization, rounding and runtime semantics remain unverified.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-05"
+    },
+    {
+      "name": "to_json_string",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_json_string"
+      ],
+      "reason": "Complete public syntax and required table, checked against all target example calls, establish exactly one positional argument. Counts only; conversion, null, serialization, rounding and runtime semantics remain unverified.",
+      "reviewBatch": "R03-arity-05",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "to_number",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_number"
+      ],
+      "reason": "Complete public syntax and required table, checked against all target example calls, establish exactly one positional argument. Counts only; conversion, null, serialization, rounding and runtime semantics remain unverified.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-05"
+    },
+    {
+      "name": "to_string",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_string"
+      ],
+      "reason": "Complete public syntax and required table, checked against all target example calls, establish exactly one positional argument. Counts only; conversion, null, serialization, rounding and runtime semantics remain unverified.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-05"
+    },
+    {
+      "name": "to_timestamp",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/to_timestamp"
+      ],
+      "reason": "Public required table, explicit omission/default prose and one/two-argument examples establish one required plus one optional positional slot. Counts only; units, conversion and runtime behavior remain unverified.",
+      "reviewBatch": "R03-arity-05",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "trim",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/trim"
+      ],
+      "reason": "Public syntax and required table agree on one required string slot and one optional trim-character slot. Counts only; types/default trimming behavior remain unverified.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-03"
+    },
+    {
+      "name": "trunc",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/trunc"
+      ],
+      "reason": "Public syntax, required/optional table, omission default and consistent examples establish one required plus one optional positional slot. Counts only; no precision, rounding, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-10",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "uppercase",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/uppercase"
+      ],
+      "reason": "Reviewed complete public positional syntax and required-parameter table: exactly one argument. No alternative call form in the reviewed page. Arity only; argument types and runtime behavior remain unverified.",
+      "checked": "2026-10-26",
+      "reviewBatch": "R03-arity-01"
+    },
+    {
+      "name": "values",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "comp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/values"
+      ],
+      "reason": "Each declared comp/windowcomp context has explicit single-field call syntax and a required table row, with consistent target examples. Counts only in those contexts; no input types, aggregation/null/order, grouping/window frame, implicit output or runtime validation.",
+      "reviewBatch": "R03-arity-17",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "var",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "comp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/var"
+      ],
+      "reason": "Reviewed context-specific syntax, required/optional/default table and consistent examples establish positional counts, including zero/one count forms and documented approximate optional slots. Counts only; no type, value bounds, weight/distinct/null, approximation/statistics, grouping/window or runtime validation.",
+      "reviewBatch": "R03-arity-18",
+      "checked": "2026-10-26"
+    },
+    {
+      "name": "wildcard_match",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/wildcard_match"
+      ],
+      "reason": "Complete public syntax, required table and consistent target examples establish 2 positional slots. Counts only; no regex/pattern execution, capture/replacement, stage/license availability, type, null or runtime validation.",
+      "reviewBatch": "R03-arity-13",
+      "checked": "2026-10-26"
+    }
+  ]
+}

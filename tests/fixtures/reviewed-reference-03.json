@@ -1,0 +1,22 @@
+[
+  {"name":"sha512","call":"sha512(\"amber\")","labels":["input_string"]},
+  {"name":"array_all","call":"array_all([4, 5], \"@element\" > 3)","labels":[]},
+  {"name":"array_any","call":"array_any([4, 5], \"@element\" = 4)","labels":[]},
+  {"name":"array_length","call":"array_length([4, 5])","labels":["array"]},
+  {"name":"arrayconcat","call":"arrayconcat([4], [5], [6])","labels":["array1","array2","[...array3]"]},
+  {"name":"arraycreate","call":"arraycreate(4, 5, 6)","labels":["...array_element"]},
+  {"name":"arraydistinct","call":"arraydistinct([4, 4])","blocked":true},
+  {"name":"arrayindexof","call":"arrayindexof([4, 5], \"@element\" = 4)","labels":["array","condition"]},
+  {"name":"arraymap","call":"arraymap([4, 5], to_string(\"@element\"))","labels":["array","function"]},
+  {"name":"arraymerge","call":"arraymerge([\"[4]\", \"[5]\"])","labels":["field"]},
+  {"name":"arrayrange","call":"arrayrange([4, 5, 6], 0, 2)","labels":["array","start","end"]},
+  {"name":"arraystring","call":"arraystring([\"amber\", \"ash\"], \",\")","labels":["array","delimiter"]},
+  {"name":"if","call":"if(true, 4, 5)","labels":["boolean_expression","true_return_expression","[false_return_expression]"]},
+  {"name":"greatest","call":"greatest(4, 5, 6)","labels":["expression1","expression2","[...expressions]"]},
+  {"name":"least","call":"least(4, 5, 6)","labels":["expression1","expression2","[...expressions]"]},
+  {"name":"object_create","call":"object_create(\"shade\", 4, \"branch\", 5)","labels":[]},
+  {"name":"object_merge","call":"object_merge(left_value, right_value)","labels":["obj1","obj2","[...objects]"]},
+  {"name":"wildcard_match","call":"wildcard_match(\"amber\", \"am*\")","labels":["string_value","wildcard_pattern"]},
+  {"name":"incidr","call":"incidr(address_value, \"0.0.0.0/0\")","labels":["ipv4_address_field","cidr_ranges"]},
+  {"name":"incidr6","call":"incidr6(address_value, \"2001:db8::/32\")","labels":["ipv6_address_field","cidr6_range"]}
+]

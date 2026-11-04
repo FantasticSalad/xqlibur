@@ -1,0 +1,18 @@
+[
+  {"name":"approx_count","stage":"comp","call":"approx_count(alpha)","labels":["field"]},
+  {"name":"approx_quantiles","stage":"comp","call":"approx_quantiles(alpha, 4, false)","labels":["field","number","[distinct]"]},
+  {"name":"approx_top","stage":"comp","call":"approx_top(alpha, 4, beta)","labels":["string_field","number","weight_string_field"]},
+  {"name":"avg","stage":"comp","call":"avg(alpha)","labels":["field"]},
+  {"name":"avg","stage":"windowcomp","call":"avg(alpha)","labels":["field"]},
+  {"name":"count","stage":"comp","call":"count()","labels":[]},
+  {"name":"count","stage":"comp","call":"count(alpha)","labels":["field"]},
+  {"name":"count","stage":"windowcomp","call":"count()","labels":[]},
+  {"name":"count","stage":"windowcomp","call":"count(alpha)","labels":["field"]},
+  {"name":"count_distinct","stage":"comp","call":"count_distinct(alpha)","blocked":true},
+  {"name":"earliest","stage":"comp","call":"earliest(alpha)","labels":["field"]},
+  {"name":"first","stage":"comp","call":"first(alpha)","labels":["field"]},
+  {"name":"first_value","stage":"windowcomp","call":"first_value(alpha)","labels":["field"]},
+  {"name":"lag","stage":"windowcomp","call":"lag(alpha, 2, 4)","labels":["field","[offset]","[default_value]"]},
+  {"name":"last","stage":"comp","call":"last(alpha)","labels":["field"]},
+  {"name":"last_value","stage":"windowcomp","call":"last_value(alpha)","labels":["field"]}
+]

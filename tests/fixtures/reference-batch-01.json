@@ -1,0 +1,12 @@
+[
+  {"name":"uppercase","call":"uppercase(\"saffron\")","labels":["string"]},
+  {"name":"trim","call":"trim(\"~saffron~\", \"~\")","labels":["string","[trim_characters]"]},
+  {"name":"ltrim","call":"ltrim(\"~saffron\", \"~\")","labels":["string","[trim_characters]"]},
+  {"name":"rtrim","call":"rtrim(\"saffron~\", \"~\")","labels":["string","[trim_characters]"]},
+  {"name":"replace","call":"replace(\"amber,ash\", \",\", \";\")","labels":["field","old_substring","new_string"]},
+  {"name":"split","call":"split(\"amber,ash\", \",\")","labels":["value","[string_delimiter]"]},
+  {"name":"len","call":"len(\"saffron\")","labels":["string"]},
+  {"name":"to_float","call":"to_float(\"4.25\")","labels":["string"]},
+  {"name":"to_integer","call":"to_integer(\"47\")","labels":["string"]},
+  {"name":"to_number","call":"to_number(\"4.75\")","labels":["string"]}
+]

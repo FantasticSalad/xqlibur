@@ -1,0 +1,1802 @@
+{
+  "name": "Cortex XQL",
+  "scopeName": "source.cortex-xql",
+  "patterns": [
+    {
+      "include": "#main"
+    }
+  ],
+  "repository": {
+    "main": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#strings"
+        },
+        {
+          "name": "meta.stage.alter.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(alter)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.arrayexpand.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(arrayexpand)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.bin.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(bin)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.call.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(call)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.cold_dataset.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(cold_dataset)\\b|(?<=\\()\\s*(cold_dataset)\\b(?=\\s*(?:=|[A-Za-z_]))",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.comp.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(comp)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=\\))\\s+((?i:as))\\s+([A-Za-z_][A-Za-z_0-9]*)(?:\\s+((?i:by))\\b)?",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.clause.xql"
+                },
+                "2": {
+                  "name": "variable.other.xql"
+                },
+                "3": {
+                  "name": "keyword.control.clause.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=\\))\\s+((?i:by))\\b",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.clause.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.config.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(config)\\b|(?<=\\()\\s*(config)\\b(?=\\s*(?:=|[A-Za-z_]))",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "name": "variable.parameter.option.xql",
+              "match": "\\b[A-Za-z_][A-Za-z_0-9]*(?=\\s*=)"
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.datamodel.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(datamodel)\\b|(?<=\\()\\s*(datamodel)\\b(?=\\s*(?:=|[A-Za-z_]))",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.dataset.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(dataset)\\b|(?<=\\()\\s*(dataset)\\b(?=\\s*(?:=|[A-Za-z_]))",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.dedup.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(dedup)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.fields.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(fields)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "match": "\\b([A-Za-z_][A-Za-z_0-9]*(?:\\.[A-Za-z_][A-Za-z_0-9]*)*)\\s+((?i:as))\\s+([A-Za-z_][A-Za-z_0-9]*)\\b",
+              "captures": {
+                "1": {
+                  "name": "meta.field.path.xql",
+                  "patterns": [
+                    {
+                      "include": "#pathParts"
+                    }
+                  ]
+                },
+                "2": {
+                  "name": "keyword.control.clause.xql"
+                },
+                "3": {
+                  "name": "variable.other.xql"
+                }
+              }
+            },
+            {
+              "name": "keyword.operator.wildcard.xql",
+              "match": "\\*"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "begin": "\\(",
+              "end": "\\)",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.section.parens.begin.xql"
+                }
+              },
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.parens.end.xql"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#main"
+                }
+              ]
+            },
+            {
+              "begin": "\\[",
+              "end": "\\]",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.section.brackets.begin.xql"
+                }
+              },
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.brackets.end.xql"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#main"
+                }
+              ]
+            },
+            {
+              "begin": "\\{",
+              "end": "\\}",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.section.braces.begin.xql"
+                }
+              },
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.braces.end.xql"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#main"
+                }
+              ]
+            },
+            {
+              "name": "punctuation.separator.pipeline.xql",
+              "match": "\\|"
+            },
+            {
+              "name": "punctuation.separator.comma.xql",
+              "match": ","
+            },
+            {
+              "name": "punctuation.separator.path.xql",
+              "match": "\\."
+            },
+            {
+              "name": "variable.other.property.xql",
+              "match": "\\b[A-Za-z_][A-Za-z_0-9]*\\b"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.filter.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(filter)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.iploc.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(iploc)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.join.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(join)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=\\))\\s+((?i:as))\\s+([A-Za-z_][A-Za-z_0-9]*)(?:\\s+((?i:by))\\b)?",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.clause.xql"
+                },
+                "2": {
+                  "name": "entity.name.namespace.xql"
+                },
+                "3": {
+                  "name": "keyword.control.clause.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.limit.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(limit)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.pivot.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(pivot)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.preset.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(preset)\\b|(?<=\\()\\s*(preset)\\b(?=\\s*(?:=|[A-Za-z_]))",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.replacenull.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(replacenull)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.search.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(search)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.sort.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(sort)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "name": "keyword.control.clause.xql",
+              "match": "\\b(?i:asc|desc)(?=\\s+[A-Za-z_])"
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.tag.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(tag)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.target.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(target)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.top.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(top)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.transaction.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(transaction)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.transpose.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(transpose)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.union.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(union)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.view.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(view)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "name": "meta.stage.windowcomp.xql",
+          "begin": "(?:(\\|)|\\A)\\s*(windowcomp)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.pipeline.xql"
+            },
+            "2": {
+              "name": "keyword.control.xql"
+            },
+            "3": {
+              "name": "keyword.control.xql"
+            }
+          },
+          "end": "(?=\\||\\))",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#wordOperatorGroups"
+            },
+            {
+              "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.property.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=\\))\\s+((?i:as))\\s+([A-Za-z_][A-Za-z_0-9]*)(?:\\s+((?i:by))\\b)?",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.clause.xql"
+                },
+                "2": {
+                  "name": "variable.other.xql"
+                },
+                "3": {
+                  "name": "keyword.control.clause.xql"
+                }
+              }
+            },
+            {
+              "match": "(?<=\\))\\s+((?i:by))\\b",
+              "captures": {
+                "1": {
+                  "name": "keyword.control.clause.xql"
+                }
+              }
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        },
+        {
+          "include": "#expression"
+        }
+      ]
+    },
+    "expression": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#wordOperatorGroups"
+        },
+        {
+          "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+          "captures": {
+            "1": {
+              "name": "variable.other.property.xql"
+            }
+          }
+        },
+        {
+          "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)",
+          "captures": {
+            "1": {
+              "name": "variable.other.property.xql"
+            }
+          }
+        },
+        {
+          "name": "support.function.xql",
+          "match": "\\b(?:acos|add|approx_count|approx_quantiles|approx_top|array_all|array_any|array_length|arrayconcat|arraycreate|arraydistinct|arrayfilter|arrayindex|arrayindexof|arraymap|arraymerge|arrayrange|arraystring|asin|avg|bitwise_and|bitwise_or|bitwise_sleft|bitwise_sright|bitwise_xor|cbrt|ceil|coalesce|concat|convert_from_base_64|convert_to_base_64|cos|cosine_distance|cot|count|count_distinct|csc|current_time|date_floor|divide|earliest|euclidean_distance|exp|extract_time|extract_url_host|extract_url_pub_suffix|extract_url_registered_domain|first|first_value|floor|format_string|format_timestamp|greatest|hierarchy_match|if|incidr|incidr6|incidrlist|int_to_ip|ip_to_int|is_ipv4|is_ipv6|is_known_private_ipv4|is_known_private_ipv6|is_sla_breached|json_extract|json_extract_array|json_extract_scalar|json_extract_scalar_array|json_functions_reference|json_path_extract|lag|last|last_value|latest|least|len|list|ln|log|log10|lowercase|ltrim|max|md5|median|min|mod|multiply|object_create|object_merge|parse_epoch|parse_timestamp|pow|power|rand|range_bucket|rank|regexcapture|regextract|replace|replex|round|row_number|rtrim|safe_add|safe_divide|safe_multiply|safe_negate|safe_subtract|sec|sha1|sha256|sha512|sign|sin|sla_time_remaining|split|sqrt|stddev_population|stddev_sample|string_count|subtract|sum|tan|time_frame_end|timestamp_diff|timestamp_seconds|to_boolean|to_epoch|to_float|to_integer|to_json_string|to_number|to_string|to_timestamp|trim|trunc|uppercase|values|var|wildcard_match)(?=\\s*\\()"
+        },
+        {
+          "name": "entity.name.function.xql",
+          "match": "\\b(?!(?i:in|and|or|not|as|by|over)\\b)[A-Za-z_][A-Za-z_0-9]*(?=\\s*\\()"
+        },
+        {
+          "name": "constant.language.xql",
+          "match": "\\b(?i:true|false|null)\\b"
+        },
+        {
+          "name": "keyword.operator.word.xql",
+          "match": "\\b(?i:and|or|not|in|contains|incidr|incidr6)\\b(?!\\s*=)"
+        },
+        {
+          "name": "constant.numeric.xql",
+          "match": "\\b[0-9]+(?:\\.[0-9]+)?(?:[eE][+-]?[0-9]+)?\\b"
+        },
+        {
+          "begin": "\\(",
+          "end": "\\)",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.parens.begin.xql"
+            }
+          },
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.parens.end.xql"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#main"
+            }
+          ]
+        },
+        {
+          "begin": "\\[",
+          "end": "\\]",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.brackets.begin.xql"
+            }
+          },
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.brackets.end.xql"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#main"
+            }
+          ]
+        },
+        {
+          "begin": "\\{",
+          "end": "\\}",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.braces.begin.xql"
+            }
+          },
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.braces.end.xql"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#main"
+            }
+          ]
+        },
+        {
+          "name": "keyword.operator.xql",
+          "match": "!~=|->|!=|>=|<=|~=|==|[=<>+*/%-]"
+        },
+        {
+          "name": "punctuation.separator.pipeline.xql",
+          "match": "\\|"
+        },
+        {
+          "name": "punctuation.separator.comma.xql",
+          "match": ","
+        },
+        {
+          "name": "punctuation.separator.path.xql",
+          "match": "\\."
+        },
+        {
+          "name": "variable.other.property.xql",
+          "match": "\\b[A-Za-z_][A-Za-z_0-9]*\\b"
+        }
+      ]
+    },
+    "wordOperatorGroups": {
+      "patterns": [
+        {
+          "match": "(?<=\\.)\\s*([A-Za-z_][A-Za-z_0-9]*)\\s+(?:((?i:not))\\s+)?((?i:contains|incidr6?))(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "variable.other.property.xql"
+            },
+            "2": {
+              "name": "keyword.operator.word.xql"
+            },
+            "3": {
+              "name": "keyword.operator.word.xql"
+            }
+          }
+        },
+        {
+          "match": "(?<=->)\\s*([A-Za-z_][A-Za-z_0-9]*)\\s+(?:((?i:not))\\s+)?((?i:contains|incidr6?))(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "variable.other.property.xql"
+            },
+            "2": {
+              "name": "keyword.operator.word.xql"
+            },
+            "3": {
+              "name": "keyword.operator.word.xql"
+            }
+          }
+        },
+        {
+          "match": "\\b((?!(?i:and|or|not|in|contains|incidr|incidr6|true|false|null)\\b)[A-Za-z_][A-Za-z_0-9]*)\\s+(?:((?i:not))\\s+)?((?i:contains|incidr6?))(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "variable.other.property.xql"
+            },
+            "2": {
+              "name": "keyword.operator.word.xql"
+            },
+            "3": {
+              "name": "keyword.operator.word.xql"
+            }
+          }
+        },
+        {
+          "match": "\\b((?i:true|false|null))\\s+(?:((?i:not))\\s+)?((?i:contains|incidr6?))(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "constant.language.xql"
+            },
+            "2": {
+              "name": "keyword.operator.word.xql"
+            },
+            "3": {
+              "name": "keyword.operator.word.xql"
+            }
+          }
+        },
+        {
+          "match": "(?<=\\))\\s+(?:((?i:not))\\s+)?((?i:contains|incidr6?))(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.word.xql"
+            },
+            "2": {
+              "name": "keyword.operator.word.xql"
+            }
+          }
+        },
+        {
+          "match": "(?<=\\])\\s+(?:((?i:not))\\s+)?((?i:contains|incidr6?))(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.word.xql"
+            },
+            "2": {
+              "name": "keyword.operator.word.xql"
+            }
+          }
+        },
+        {
+          "match": "(?<=\\})\\s+(?:((?i:not))\\s+)?((?i:contains|incidr6?))(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.word.xql"
+            },
+            "2": {
+              "name": "keyword.operator.word.xql"
+            }
+          }
+        },
+        {
+          "match": "(?<=\")\\s+(?:((?i:not))\\s+)?((?i:contains|incidr6?))(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.word.xql"
+            },
+            "2": {
+              "name": "keyword.operator.word.xql"
+            }
+          }
+        },
+        {
+          "match": "(?<=')\\s+(?:((?i:not))\\s+)?((?i:contains|incidr6?))(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.word.xql"
+            },
+            "2": {
+              "name": "keyword.operator.word.xql"
+            }
+          }
+        },
+        {
+          "match": "(?<=[0-9])\\s+(?:((?i:not))\\s+)?((?i:contains|incidr6?))(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.word.xql"
+            },
+            "2": {
+              "name": "keyword.operator.word.xql"
+            }
+          }
+        },
+        {
+          "match": "^\\s*((?i:contains|incidr6?))(?=\\s*\\()",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.word.xql"
+            }
+          }
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.xql",
+          "begin": "//",
+          "end": "$"
+        },
+        {
+          "name": "comment.block.xql",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.multi.xql",
+          "begin": "\"\"\"",
+          "end": "\"\"\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.xql",
+              "match": "\\\\[nt\\\\]"
+            },
+            {
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.double.xql",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.multi.xql",
+          "begin": "'''",
+          "end": "'''",
+          "patterns": [
+            {
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.xql",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "pathParts": {
+      "patterns": [
+        {
+          "name": "punctuation.separator.path.xql",
+          "match": "\\."
+        },
+        {
+          "name": "variable.other.property.xql",
+          "match": "\\b[A-Za-z_][A-Za-z_0-9]*\\b"
+        }
+      ]
+    }
+  }
+}

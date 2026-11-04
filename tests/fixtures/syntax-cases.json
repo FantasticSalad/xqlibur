@@ -1,0 +1,11 @@
+[
+  {"name":"nested join with options","query":"dataset = xdr_data | join type = left (dataset = xdr_data | filter true | limit 1) as sample sample._time = _time | fields _time","stages":["dataset","join","dataset","filter","limit","fields"],"calls":[]},
+  {"name":"subquery in membership","query":"dataset = xdr_data | filter action_process_image_name in (dataset = xdr_data | fields action_process_image_name)","stages":["dataset","filter","dataset","fields"],"calls":[]},
+  {"name":"multiple alter assignments","query":"dataset = xdr_data | alter alpha = lowercase(action_process_image_name), beta = concat(alpha, to_string(42)) | fields alpha, beta","stages":["dataset","alter","fields"],"calls":["lowercase","concat","to_string"]},
+  {"name":"structural-only callback-like expression and JSON access","query":"dataset = xdr_data | alter sample = arrayfilter(arraycreate(1, 2), \"@element\" -> active = true)","structuralOnly":true,"stages":["dataset","alter"],"calls":["arrayfilter","arraycreate"]},
+  {"name":"quoted pipe and comment markers","query":"dataset = xdr_data | alter sample = \"a|b // c /* d */\" /* | future_stage() */ | limit 1","stages":["dataset","alter","limit"],"calls":[]},
+  {"name":"triple quote across lines","query":"dataset = xdr_data | alter sample = \"\"\"first\n| fake()\nlast\"\"\" | limit 1","stages":["dataset","alter","limit"],"calls":[]},
+  {"name":"numeric and boolean grouping","query":"dataset = xdr_data | filter (1.2e-3 < 2 and (true or false))","stages":["dataset","filter"],"calls":[]},
+  {"name":"data model entry","query":"datamodel dataset = xdr_data | filter true | limit 1","stages":["datamodel","filter","limit"],"calls":[]},
+  {"name":"keywords as member names","query":"dataset = xdr_data | alter sample = payload -> filter | fields payload.lowercase, sample","stages":["dataset","alter","fields"],"calls":[]}
+]

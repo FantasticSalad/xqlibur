@@ -1,0 +1,21 @@
+[
+  {"name":"latest","stage":"comp","call":"latest(alpha)","labels":["field"]},
+  {"name":"latest","stage":"windowcomp","call":"latest(alpha)","labels":["field"]},
+  {"name":"list","stage":"comp","call":"list(alpha)","labels":["field"]},
+  {"name":"max","stage":"comp","call":"max(alpha)","labels":["field"]},
+  {"name":"max","stage":"windowcomp","call":"max(alpha)","labels":["field"]},
+  {"name":"median","stage":"comp","call":"median(alpha)","labels":["field"]},
+  {"name":"median","stage":"windowcomp","call":"median(alpha)","labels":["field"]},
+  {"name":"min","stage":"comp","call":"min(alpha)","labels":["field"]},
+  {"name":"min","stage":"windowcomp","call":"min(alpha)","labels":["field"]},
+  {"name":"rank","stage":"windowcomp","call":"rank()","labels":[]},
+  {"name":"row_number","stage":"windowcomp","call":"row_number()","labels":[]},
+  {"name":"stddev_population","stage":"comp","call":"stddev_population(alpha)","labels":["field"]},
+  {"name":"stddev_population","stage":"windowcomp","call":"stddev_population(alpha)","labels":["field"]},
+  {"name":"stddev_sample","stage":"comp","call":"stddev_sample(alpha)","labels":["field"]},
+  {"name":"stddev_sample","stage":"windowcomp","call":"stddev_sample(alpha)","labels":["field"]},
+  {"name":"sum","stage":"comp","call":"sum(alpha)","labels":["field"]},
+  {"name":"sum","stage":"windowcomp","call":"sum(alpha)","labels":["field"]},
+  {"name":"values","stage":"comp","call":"values(alpha)","labels":["field"]},
+  {"name":"var","stage":"comp","call":"var(alpha)","labels":["field"]}
+]

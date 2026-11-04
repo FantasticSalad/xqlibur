@@ -1,0 +1,129 @@
+{
+  "name": "xqlibur",
+  "displayName": "XQLibur",
+  "description": "Highlighting, completion, hovers, argument hints and conservative diagnostics for Cortex XQL, including XQL blocks in YAML. Runs locally; no query execution.",
+  "version": "0.3.0",
+  "preview": true,
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#1B2A4A",
+    "theme": "dark"
+  },
+  "pricing": "Free",
+  "publisher": "FantasticSalad",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FantasticSalad/xqlibur.git"
+  },
+  "homepage": "https://github.com/FantasticSalad/xqlibur#readme",
+  "bugs": {
+    "url": "https://github.com/FantasticSalad/xqlibur/issues"
+  },
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters"
+  ],
+  "keywords": [
+    "xql",
+    "cortex",
+    "xsiam",
+    "xdr",
+    "query language",
+    "yaml"
+  ],
+  "main": "./dist/extension.cjs",
+  "activationEvents": ["onLanguage:yaml"],
+  "extensionKind": [
+    "workspace"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": {
+      "supported": true
+    }
+  },
+  "contributes": {
+    "configurationDefaults": {
+      "[cortex-xql]": {"editor.semanticHighlighting.enabled": true},
+      "editor.tokenColorCustomizations": {
+        "[Eclipse Dark]": {
+          "textMateRules": [
+            {"scope":"keyword.control.xql","settings":{"foreground":"#E88537"}},
+            {"scope":"keyword.control.clause.xql","settings":{"foreground":"#E88537"}},
+            {"scope":"keyword.operator.word.xql","settings":{"foreground":"#E88537"}},
+            {"scope":"keyword.operator.xql","settings":{"foreground":"#E88537"}},
+            {"scope":"support.function.xql","settings":{"foreground":"#A7EC21"}},
+            {"scope":"entity.name.function.xql","settings":{"foreground":"#A7EC21"}}
+          ]
+        }
+      }
+    },
+    "semanticTokenTypes": [{"id":"xqlDataset","superType":"namespace","description":"An XQL dataset source identifier"}],
+    "semanticTokenScopes": [{"language":"cortex-xql","scopes":{"xqlDataset":["entity.name.type.xql"],"property":["variable.other.property.xql"],"variable":["variable.other.xql"],"namespace":["entity.name.namespace.xql"],"parameter":["variable.parameter.option.xql"],"function.defaultLibrary":["support.function.xql"],"function":["entity.name.function.xql"],"keyword":["keyword.control.xql"],"number":["constant.numeric.xql"],"operator":["keyword.operator.xql"]}}],
+    "languages": [
+      {
+        "id": "cortex-xql",
+        "aliases": [
+          "Cortex XQL",
+          "XQL"
+        ],
+        "extensions": [
+          ".xql"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "cortex-xql",
+        "scopeName": "source.cortex-xql",
+        "path": "./syntaxes/xql.tmLanguage.json"
+      },
+      {
+        "scopeName": "xqlibur.yaml.injection",
+        "path": "./syntaxes/yaml-injection.tmLanguage.json",
+        "injectTo": ["source.yaml"]
+      }
+    ],
+    "snippets": [
+      {
+        "language": "cortex-xql",
+        "path": "./snippets/xql.json"
+      }
+    ]
+  },
+  "scripts": {
+    "reference:update": "node scripts/update-reference.mjs",
+    "generate": "node scripts/generate.mjs",
+    "check": "node scripts/validate-facts.mjs && node scripts/validate-reference.mjs && tsc --noEmit",
+    "build": "npm run generate && node scripts/build.mjs",
+    "test": "npm run build && tsc && node --test tests/*.test.cjs tests/*.test.mjs",
+    "test:host": "node scripts/test-host.mjs",
+    "test:package": "node scripts/test-host.mjs --package",
+    "package": "npm run check && npm run build && vsce package --no-dependencies --out artifacts/",
+    "vscode:prepublish": "npm run build"
+  },
+  "dependencies": {
+    "vscode-languageclient": "9.0.1",
+    "vscode-languageserver": "9.0.1",
+    "vscode-languageserver-textdocument": "1.0.12"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "@types/vscode": "1.100.0",
+    "@vscode/test-electron": "3.1.0",
+    "@vscode/vsce": "4.1.0",
+    "esbuild": "0.28.2",
+    "fflate": "0.8.3",
+    "typescript": "7.0.2",
+    "vscode-oniguruma": "2.0.1",
+    "vscode-textmate": "9.3.2"
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {"name":"convert_from_base_64","call":"convert_from_base_64(\"YW1iZXI=\")","labels":["encoded_string"]},
+  {"name":"convert_to_base_64","call":"convert_to_base_64(\"amber\")","labels":["input_string"]},
+  {"name":"extract_url_host","call":"extract_url_host(\"https://example.com/amber\")","labels":["url_string"]},
+  {"name":"extract_url_pub_suffix","call":"extract_url_pub_suffix(\"https://example.com/amber\")","labels":["url"]},
+  {"name":"extract_url_registered_domain","call":"extract_url_registered_domain(\"https://example.com/amber\")","labels":["url"]},
+  {"name":"format_string","call":"format_string(\"%s %s\", \"amber\", \"ash\")","labels":[]},
+  {"name":"json_extract_scalar","call":"json_extract_scalar(\"{}\", \"$.branch\")","labels":["json_object_formatted_string","json_path"],"infix":"json_string -> path"},
+  {"name":"json_extract","call":"json_extract(\"{}\", \"$.branch\")","labels":["json_object_formatted_string","json_path"],"infix":"json_string -> path{}"},
+  {"name":"json_extract_array","call":"json_extract_array(\"[]\", \"$\")","labels":["json_array_string","json_path"],"infix":"json_string -> path[]"},
+  {"name":"json_extract_scalar_array","call":"json_extract_scalar_array(\"[]\", \"$['branch']\")","labels":["json_array_string","json_path"]},
+  {"name":"json_path_extract","call":"json_path_extract(\"{}\", \"$.branch\")","labels":["json_field","json_path"],"infix":"json_string ->-> json_path"},
+  {"name":"json_functions_reference","call":"json_functions_reference(\"{}\")","blocked":true},
+  {"name":"regexcapture","call":"regexcapture(\"amber\", \"(?P<shade>am)\")","labels":["field","pattern"]},
+  {"name":"regextract","call":"regextract(\"amber\", \"(am)\")","labels":["field","regex_pattern"]},
+  {"name":"replex","call":"replex(\"amber\", \"am\", \"em\")","labels":["string","pattern","new_string"]},
+  {"name":"string_count","call":"string_count(\"amber amber\", \"am\")","labels":["string","pattern"]},
+  {"name":"to_boolean","call":"to_boolean(\"true\")","labels":["string"]},
+  {"name":"to_json_string","call":"to_json_string(arraycreate(4, 5))","labels":["data_type"]},
+  {"name":"md5","call":"md5(\"amber\")","labels":["input_string"]},
+  {"name":"sha1","call":"sha1(\"amber\")","labels":["input_string"]},
+  {"name":"sha256","call":"sha256(\"amber\")","labels":["input_string"]}
+]

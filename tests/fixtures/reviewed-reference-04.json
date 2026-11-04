@@ -1,0 +1,22 @@
+[
+  {"name":"acos","call":"acos(0.25)","labels":["numeric_expression"]},
+  {"name":"add","call":"add(4, 5)","labels":["value_1","value_2"]},
+  {"name":"asin","call":"asin(0.25)","labels":["numeric_expression"]},
+  {"name":"bitwise_and","call":"bitwise_and(4, 5)","labels":["left_clause","right_clause"]},
+  {"name":"bitwise_or","call":"bitwise_or(4, 5)","labels":["left_clause","right_clause"]},
+  {"name":"bitwise_sleft","call":"bitwise_sleft(4, 1)","labels":["left_clause","right_clause"]},
+  {"name":"bitwise_sright","call":"bitwise_sright(4, 1)","labels":["left_clause","right_clause"]},
+  {"name":"bitwise_xor","call":"bitwise_xor(4, 5)","labels":["left_clause","right_clause"]},
+  {"name":"cbrt","call":"cbrt(27)","labels":["number"]},
+  {"name":"ceil","call":"ceil(4.25)","labels":["number"]},
+  {"name":"cos","call":"cos(0.25)","labels":["numeric_expression"]},
+  {"name":"cot","call":"cot(0.25)","labels":["numeric_expression"]},
+  {"name":"csc","call":"csc(0.25)","labels":["numeric_expression"]},
+  {"name":"divide","call":"divide(20, 4)","labels":["numerator","denominator"]},
+  {"name":"exp","call":"exp(2)","labels":["number"]},
+  {"name":"floor","call":"floor(4.75)","labels":["number"]},
+  {"name":"ln","call":"ln(3)","labels":["number"]},
+  {"name":"log","call":"log(27, 3)","labels":["number","base"]},
+  {"name":"log10","call":"log10(100)","labels":["number"]},
+  {"name":"mod","call":"mod(27, 4)","labels":["dividend","divisor"]}
+]
