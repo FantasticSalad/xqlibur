@@ -36,9 +36,9 @@ function baseline(doc:Structure):Finding[] {
   if(tree.limited) return [{code:'XQL000',severity:'information',message:'Analysis paused: document length or nesting exceeds the local analysis limit.',start:0,end:0}];
   const findings:Finding[]=tree.issues.map(f=>({...f,severity:'error'}));
   for(const stage of tree.stages) if(!names.has('stage:'+stage.name.text)) findings.push({code:'XQL201',severity:'warning',start:stage.name.start,end:stage.name.end,
-    message:"Stage '"+stage.name.text+"' is not in the bundled reference ("+catalogue.checked+"); newer syntax may be supported by Cortex."});
+    message:"Stage '"+stage.name.text+"' is not in the bundled reference; newer syntax may be supported by Cortex."});
   for(const call of tree.calls) if(!names.has('function:'+call.name.text)) findings.push({code:'XQL202',severity:'warning',start:call.name.start,end:call.name.end,
-    message:"Function '"+call.name.text+"' is not in the bundled reference ("+catalogue.checked+"); this does not establish a Cortex error."});
+    message:"Function '"+call.name.text+"' is not in the bundled reference; this does not establish a Cortex error."});
   return findings.sort((a,b)=>a.start-b.start).slice(0,100);
 }
 /** Compute coverage before dependent rules. Existing baseline findings retain their meanings. */

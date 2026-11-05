@@ -34,7 +34,8 @@ test('bundled LSP handles unsaved documents, changes, close, completion and hove
   assert.ok(items.some(i=>i.label==='filter'));
   notify('textDocument/didChange',{textDocument:{uri,version:2},contentChanges:[{text:'dataset = xdr_data | alter sample = lowercase("sample")'}]});
   const info=await request('textDocument/hover',{textDocument:{uri},position:{line:0,character:38}});
-  assert.match(info.contents.value,/Public documentation/);
+  assert.match(info.contents.value,/Supporting Documentation/);
+  assert.doesNotMatch(info.contents.value,/\d{4}-\d{2}-\d{2}|checked|runtime behavior/);
   assert.ok(info.contents.value.includes('lowercase\\(string\\)'));
   const semantic=await request('textDocument/semanticTokens/full',{textDocument:{uri}});
   assert.ok(semantic.data.length>0);
@@ -62,11 +63,28 @@ test('bundled LSP handles unsaved documents, changes, close, completion and hove
   assert.deepEqual(multiple.signatures[1].parameters,[]);
   const rich=await request('textDocument/hover',{textDocument:{uri},position:{line:0,character:complete.indexOf('arrayfilter')+1}});
   for(const form of require('../reference/signatures.json').functions.find(f=>f.name==='arrayfilter').forms) {
-    assert.ok(rich.contents.value.includes('checked '+form.checked));
+    assert.ok(!rich.contents.value.includes(form.checked));
     assert.ok(rich.contents.value.includes(form.source));
   }
   assert.ok(rich.contents.value.includes('comparison value'));
   let version=4;
+  for(const [text,word,expected] of [
+    ['alter result = 1','alter',/Creates fields or changes existing field values/],
+    ['alter result = json_extract_scalar(payload, "$.status")','json_extract_scalar',/Extracts a scalar value .* returns it as a string/],
+    ['filter true','filter',/Keeps records where the condition is true/],
+    ['alter result = if(true, 1, 0)','if',/Returns a value according/],
+    ['alter result = 1 | filter result = 1','result',/Created or replaced by alter/]
+  ]) {
+    notify('textDocument/didChange',{textDocument:{uri,version:++version},contentChanges:[{text}]});
+    const response=await request('textDocument/hover',{textDocument:{uri},position:{line:0,character:text.indexOf(word)+1}});
+    assert.match(response.contents.value,expected);
+    assert.doesNotMatch(response.contents.value,/\d{4}-\d{2}-\d{2}|checked|Local analysis|source membership|runtime behavior|conditional_values/);
+    if(word!=='result') assert.equal((response.contents.value.match(/Supporting Documentation/g)||[]).length,1);
+    if(['alter','json_extract_scalar'].includes(word)) {
+      const symbol=require('../reference/catalogue.json').symbols.find(symbol=>symbol.name===word);
+      assert.ok(response.contents.value.includes(']('+symbol.source+')'));
+    }
+  }
   for(const [name,caveat] of [['coalesce',/minimum .*count remains unverified/],['arraycreate',/minimum .*count remains unverified/],['regexcapture',/unavailable in interactive Query Builder queries/]]) {
     const text='alter result = '+name+'()';
     notify('textDocument/didChange',{textDocument:{uri,version:++version},contentChanges:[{text}]});

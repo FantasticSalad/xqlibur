@@ -5,6 +5,12 @@ Names and source links extracted from the public Cortex XQL indexes by
 by the installed extension. Descriptions and vendor examples are not copied.
 
 The checked date describes this snapshot, not a supported product release.
+Review dates are internal provenance and are not displayed in editor help or
+diagnostics. `packages/core/stage-help.ts` provides reviewed, independently written
+definitions for every catalogued stage, using each catalogue entry's official
+source link. Reviewed on 2026-11-05 against the individual stage pages; transpose
+has only the official stage-index description, and datamodel uses the linked XDM
+best-practices page. The index's conflicting preset/view descriptions are not used.
 Unknown names produce warnings, because the catalogue can be incomplete.
 External draft links in the indexes are replaced by citations to the official index.
 The separately documented `datamodel` entry is curated in the update script.

@@ -10,6 +10,9 @@ on:
         type: string
 permissions:
   contents: read
+env:
+  SOURCE_DATE_EPOCH: '946684800'
+  TZ: UTC
 concurrency:
   group: publish
   cancel-in-progress: false

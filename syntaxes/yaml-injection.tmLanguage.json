@@ -3,13 +3,27 @@
   "injectionSelector": "L:source.yaml - string - comment - meta.scalar.yaml",
   "patterns": [
     {
-      "begin": "^( *)(?:- +)?(xql)(:)[ \\t]*(\\|[+-]?)[ \\t]*(?:#.*)?$",
+      "begin": "(?:^|\\G)( *)-( +)(xql)(:)[ \\t]*(\\|[+-]?)[ \\t]*(?:#.*)?$",
+      "beginCaptures": {
+        "3": {"name": "entity.name.tag.yaml"},
+        "4": {"name": "punctuation.separator.key-value.yaml"},
+        "5": {"name": "keyword.control.flow.block-scalar.yaml"}
+      },
+      "while": "\\G(?:[ \\t]*$|\\1 \\2 +)",
+      "contentName": "meta.embedded.block.xql",
+      "patterns": [
+        {"match": "(?:^\\s*|\\G)(datamodel|dataset|cold_dataset|preset|config)\\b", "captures": {"1": {"name": "keyword.control.xql"}}},
+        {"include": "source.cortex-xql"}
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)( *)(xql)(:)[ \\t]*(\\|[+-]?)[ \\t]*(?:#.*)?$",
       "beginCaptures": {
         "2": {"name": "entity.name.tag.yaml"},
         "3": {"name": "punctuation.separator.key-value.yaml"},
         "4": {"name": "keyword.control.flow.block-scalar.yaml"}
       },
-      "while": "^(?:\\s*$|\\1 +)",
+      "while": "\\G(?:[ \\t]*$|\\1 +)",
       "contentName": "meta.embedded.block.xql",
       "patterns": [
         {"match": "(?:^\\s*|\\G)(datamodel|dataset|cold_dataset|preset|config)\\b", "captures": {"1": {"name": "keyword.control.xql"}}},

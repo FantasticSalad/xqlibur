@@ -7,26 +7,35 @@ import {homedir} from 'node:os';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHostDirectory} from './host-temp.mjs';
+import {screenshots} from './screenshots.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const hostDirectory=await createHostDirectory(),isolated=hostDirectory.path;
 let extensionPath=root;
 if(process.argv.includes('--package')) {
   const manifest=JSON.parse(await readFile(path.join(root,'package.json'),'utf8'));
   const entries=unzipSync(await readFile(path.join(root,'artifacts',`xqlibur-${manifest.version}.vsix`)));
-  const allowed=new Set(['[Content_Types].xml','extension.vsixmanifest',...['LICENSE.txt','PRIVACY.md','images/icon.png','THIRD_PARTY_NOTICES.md','changelog.md','language-configuration.json','package.json','readme.md','dist/extension.cjs','dist/server.cjs','dist/THIRD_PARTY_LICENSES.txt','reference/catalogue.json','reference/signatures.json','snippets/xql.json','syntaxes/xql.tmLanguage.json','syntaxes/yaml-injection.tmLanguage.json','docs/parser.md'].map(p=>'extension/'+p)]);
+  const allowed=new Set(['[Content_Types].xml','extension.vsixmanifest',...['LICENSE.txt','PRIVACY.md','images/icon.png',...screenshots,'THIRD_PARTY_NOTICES.md','changelog.md','language-configuration.json','package.json','readme.md','dist/extension.cjs','dist/server.cjs','dist/THIRD_PARTY_LICENSES.txt','reference/catalogue.json','reference/signatures.json','snippets/xql.json','syntaxes/xql.tmLanguage.json','syntaxes/yaml-injection.tmLanguage.json','docs/parser.md'].map(p=>'extension/'+p)]);
   for(const [name,bytes] of Object.entries(entries)) {
     if(name.endsWith('/')) continue;
     assert.ok(allowed.delete(name),`Unexpected packaged file: ${name}`);
     if(name.endsWith('.png')) {
-      // Compressed pixels can resemble path text, so check structure instead:
-      // only image-data chunks, so no text, metadata or path can be carried.
+      // Compressed pixels can resemble path text. Permit image/colour/resolution
+      // chunks only: never text, capture time, EXIF, XMP or trailing payloads.
       assert.deepEqual([...bytes.subarray(0,8)],[137,80,78,71,13,10,26,10],`Invalid PNG: ${name}`);
       const view=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);
-      for(let at=8;at<bytes.length;) {
+      let at=8,last='';
+      for(;at<bytes.length;) {
+        assert.ok(at+12<=bytes.length,`Truncated PNG chunk in ${name}`);
         const type=new TextDecoder().decode(bytes.subarray(at+4,at+8));
-        assert.ok(['IHDR','PLTE','tRNS','IDAT','IEND'].includes(type),`Unexpected PNG chunk ${type} in ${name}`);
+        const safe=['IHDR','PLTE','tRNS','IDAT','IEND',...(screenshots.some(file=>name==='extension/'+file)?['sRGB','gAMA','pHYs']:[])];
+        assert.ok(safe.includes(type),`Unexpected PNG chunk ${type} in ${name}`);
         at+=12+view.getUint32(at);
+        assert.ok(at<=bytes.length,`Truncated PNG payload in ${name}`);
+        last=type;
+        if(type==='IEND') break;
       }
+      assert.equal(last,'IEND',`Missing PNG end in ${name}`);
+      assert.equal(at,bytes.length,`Trailing PNG payload in ${name}`);
     } else {
       const body=new TextDecoder().decode(bytes);
       const normalized=body.replaceAll('\\','/').toLowerCase();

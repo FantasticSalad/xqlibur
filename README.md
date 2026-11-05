@@ -1,50 +1,74 @@
 # XQLibur
 
-Language tools for Cortex XQL in VS Code: highlighting, completion, hovers,
-argument hints and conservative diagnostics, also inside `xql: |` blocks in YAML.
-Everything runs locally. XQLibur never executes queries or sends your text anywhere.
+XQL language support for VS Code: highlighting, completion, hover help, argument
+hints and diagnostics. Use it in `.xql` files and `xql: |` blocks inside YAML.
 
-XQLibur is an independent project and is not affiliated with or endorsed by
-Palo Alto Networks. Cortex and XQL are used only to identify the supported language.
+Everything runs locally. XQLibur never executes queries or uploads your text.
 
-> **Preview.** XQLibur checks what public documentation supports and stays quiet
-> where evidence is incomplete. A clean Problems panel does not prove that a query
-> will run in Cortex.
+> **Preview.** Editor checks cover documented forms; a clean Problems panel does
+> not prove that a query will run in Cortex.
 
-## Features
+XQLibur is independent and is not affiliated with or endorsed by Palo Alto Networks.
+Cortex and XQL identify the supported language.
 
-- **Highlighting** for stages, functions, operators, strings, comments and
-  dataset sources, with semantic roles for fields, declarations and aliases.
-- **Completion** for stages, functions and query-local fields, filtered by
-  context (for example, aggregates only where a stage accepts them).
-- **Hovers** with short summaries and links to the official documentation for
-  all 142 catalogued functions.
-- **Argument hints** that follow nested calls, optional and repeated arguments.
-- **Diagnostics** for structural problems, argument counts on 130 reviewed
-  functions and fields removed by earlier stages. Unknown names are warnings,
-  never errors.
-- **YAML support:** completion, hovers, argument hints and diagnostics inside
-  plain `xql: |` literal blocks (including `|-` and `|+`), plus lexical XQL
-  highlighting inside them. The rest of the YAML file keeps its normal language
-  support.
-- Works in untitled documents, Restricted Mode and virtual workspaces.
+## Get started
 
-## Getting started
+1. Install **XQLibur** from the Extensions view, or use **Extensions: Install from
+   VSIX…** for a local preview package.
+2. Open a `.xql` file, or select **XQL** in the status bar.
+3. Start typing. In YAML, place the query inside a plain `xql: |` literal block.
 
-1. Install **XQLibur** from the Extensions view.
-2. Open a `.xql` file, or pick **Cortex XQL** from the language-mode menu in the
-   status bar for any document.
-3. In YAML files, put queries in a plain literal block:
+If another XQL extension provides overlapping features, disable it for the
+workspace. XQLibur does not change file associations or other extensions.
 
-   ```yaml
-   xql: |
-     dataset = example_dataset
-     | filter action = "allow"
-     | comp count() as total by host
-   ```
+## Complete fields as you type
 
-If another XQL extension is installed, disable it for the workspace if their
-features conflict. XQLibur never changes file associations or other extensions.
+Suggestions include fields defined earlier in your query, alongside stage and
+function names. Function suggestions follow the current stage, so aggregates
+appear where they can be used.
+
+![Completion menu suggesting fields defined earlier in the query](images/screenshots/query-field-completion.png)
+
+## Understand stages and functions
+
+Hover over a stage to see what it does and open its supporting documentation.
+All 28 supported stages have definitions. Function help includes official
+reference links, reviewed summaries where available, and argument hints that
+follow nested calls and optional or repeated parameters.
+
+![Filter stage definition and supporting documentation link](images/screenshots/stage-filter-hover.png)
+
+## Read queries more easily
+
+Highlighting distinguishes stages, functions, operators, strings, comments and
+dataset sources. Semantic roles identify fields, declarations and aliases.
+Colours follow your theme and editor customisations.
+
+![XQL authentication query with stages, functions and field highlighting](images/screenshots/query-authentication-highlighting.png)
+
+## Keep XQL help inside YAML
+
+Detection rules can keep their queries in place. Plain `xql: |` blocks receive
+completion, hover help, argument hints, diagnostics and XQL highlighting, including
+nested investigation blocks. The surrounding document keeps its YAML support.
+
+![Detection rule with XQL highlighting inside a YAML literal block](images/screenshots/yaml-detection-rule.png)
+
+Use a plain literal block such as:
+
+```yaml
+xql: |
+  dataset = example_dataset
+  | filter action = "allow"
+  | comp count() as total by host
+```
+
+## Catch common mistakes
+
+Diagnostics identify structural problems, argument counts for 130 reviewed
+functions, and fields removed by earlier stages. Unknown names are warnings.
+Partially reviewed forms stay conservative. Untitled documents, Restricted Mode
+and virtual workspaces are supported.
 
 ## Limits
 
@@ -58,6 +82,9 @@ features conflict. XQLibur never changes file associations or other extensions.
 - No formatting, schema-backed completion or query execution.
 
 ## Theme fallback
+
+<details>
+<summary>Adjust theme colours</summary>
 
 Some themes only color scopes from specific languages. XQLibur supplies default
 XQL-only stage and function colors for Eclipse Dark, which otherwise leaves those
@@ -84,6 +111,33 @@ Merge the example with any existing customization instead of replacing it. The
 extension contributes defaults but does not write user settings. Adapt or omit the
 colors to meet your contrast needs. Semantic and lexical theme rules and user
 overrides can differ; no palette can guarantee readability for every configuration.
+VS Code's bracket pair colorization can also override bracket scope colors.
+
+### Dark 2026
+
+Dark 2026 uses XQL-specific defaults to distinguish blue stages, teal functions,
+lavender operators and grey bracket scopes. Fields and variables retain the theme's
+colours. To adjust these defaults, merge this into existing user customizations:
+
+```jsonc
+"editor.tokenColorCustomizations": {
+  "[Dark 2026]": {
+    "textMateRules": [
+      { "scope": "keyword.control.xql", "settings": { "foreground": "#6CB6FF" } },
+      { "scope": "keyword.control.clause.xql", "settings": { "foreground": "#6CB6FF" } },
+      { "scope": "keyword.operator.word.xql", "settings": { "foreground": "#C8A0DE" } },
+      { "scope": "keyword.operator.xql", "settings": { "foreground": "#C8A0DE" } },
+      { "scope": "support.function.xql", "settings": { "foreground": "#4EC9B0" } },
+      { "scope": "entity.name.function.xql", "settings": { "foreground": "#4EC9B0" } },
+      { "scope": "punctuation.section.parens.begin.xql, punctuation.section.parens.end.xql, punctuation.section.brackets.begin.xql, punctuation.section.brackets.end.xql, punctuation.section.braces.begin.xql, punctuation.section.braces.end.xql", "settings": { "foreground": "#B0BEC5" } }
+    ]
+  }
+}
+```
+
+Bracket pair colorization and user semantic rules can override these defaults.
+
+</details>
 
 ## Privacy
 
@@ -101,6 +155,9 @@ credentials. Report security problems privately as described in
 test from source.
 
 ## Development
+
+<details>
+<summary>Build and test from source</summary>
 
 `packages/core` holds editor-independent analysis, `packages/language-server`
 exposes it through LSP and `packages/vscode` is the thin client. Reference data is
@@ -121,3 +178,5 @@ package in an isolated VS Code profile in Restricted Mode. Set
 parser limits are in [docs/parser.md](docs/parser.md); release steps are in
 [docs/RELEASING.md](docs/RELEASING.md). Third-party notices are in
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+</details>

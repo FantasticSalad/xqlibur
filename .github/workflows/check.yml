@@ -2,6 +2,9 @@ name: Check
 on: [push, pull_request]
 permissions:
   contents: read
+env:
+  SOURCE_DATE_EPOCH: '946684800'
+  TZ: UTC
 jobs:
   test:
     strategy:

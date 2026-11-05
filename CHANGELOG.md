@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.1 (2026-11-06)
+
+The language-mode menu and status bar identify the language as XQL.
+
+Every supported stage now has a short definition in hover and completion help,
+including `fields`. Editor help and diagnostic messages omit reference dates;
+documentation links are labelled Supporting Documentation.
+
+Dark 2026 receives distinct stage, function, operator and bracket colours. Nested
+XQL literal blocks in YAML retain highlighting without affecting other scalars.
+Derived-field hovers explain their role in the query more directly.
+
+The new pixel-sword icon and feature-led front page include focused screenshots
+with line numbers and scheduling details removed.
+
 ## 0.3.0 — first Marketplace preview (2026-11-04)
 
 Packaging for Visual Studio Marketplace: extension icon, gallery metadata, a
