@@ -19,7 +19,9 @@ test('YAML injection scopes only XQL literal blocks', {skip:!process.env.XQLIBUR
   });
   const grammar=await registry.loadGrammar('source.yaml');
   let state=null;
-  const lines=['description: |','  xql: |','    | filter fake','xql: |','  datamodel dataset = example','  | filter lowercase(field) contains "x"','next: value','nested:','  xql: |-','    | filter true','  other: value'];
+  const lines=['description: |','  xql: |','    | filter fake','xql: |','  datamodel dataset = example','  | filter lowercase(field) contains "x"','next: value','nested:','  xql: |-','    | filter true','  other: value',
+    'rules:','  - investigate:','      - name: synthetic','        xql: |','          dataset = xdr_data','          | alter result = if(true, 1, 0)','          | filter result in (1, 2) and result ~= "1"','        label: ordinary',
+    '      - xql: |','          dataset = xdr_data','          | filter true','        label: ordinary'];
   const tokens=lines.map(line=>{const r=grammar.tokenizeLine(line,state);state=r.ruleStack;return r.tokens;});
   const has=(line,scope)=>tokens[line].some(t=>t.scopes.includes(scope));
   assert.equal(has(2,'keyword.control.xql'),false,JSON.stringify(tokens.slice(0,3)));
@@ -28,5 +30,10 @@ test('YAML injection scopes only XQL literal blocks', {skip:!process.env.XQLIBUR
   assert.equal(has(6,'meta.embedded.block.xql'),false);
   assert.equal(has(9,'keyword.control.xql'),true);
   assert.equal(has(10,'meta.embedded.block.xql'),false);
+  for(const line of [15,16,17,20,21]) assert.equal(has(line,'keyword.control.xql'),true,'line '+line+' '+JSON.stringify(tokens[line]));
+  assert.equal(has(16,'support.function.xql'),true);
+  assert.equal(has(17,'keyword.operator.word.xql'),true);
+  assert.equal(has(17,'keyword.operator.xql'),true);
+  for(const line of [18,22]) assert.equal(has(line,'meta.embedded.block.xql'),false);
   registry.dispose();
 });

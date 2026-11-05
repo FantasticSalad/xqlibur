@@ -1,5 +1,26 @@
 # Highlighting specification
 
+## Dark 2026 defaults
+
+Dark 2026 XQL defaults now distinguish stages (blue `#6CB6FF`), calls (teal), operators
+(lavender) and brackets (grey). Variables/fields retain the theme foreground.
+Synthetic lexical/semantic fallback probes cover adjacent calls, brackets, `=`,
+`in`, `and` and `~=`; proposed colours meet 4.5:1 against `#121314`. The installed
+Dark 2026 include chain is tested through XQL lexical and semantic fallback scopes.
+Eclipse Dark retains its existing defaults. Automated checks do not establish
+actual editor readability. Bracket pair colourization and user rules can override
+these defaults;
+other themes keep their own palette. Earlier measurements below are historical.
+
+The blue stage/clause revision separates keywords from Dark 2026's orange
+`@element` parameter fallback (`#FFA657`). Against `#121314`, blue has 8.66:1
+contrast; teal/lavender/grey have 9.13:1 / 8.45:1 / 9.76:1. Installed build
+`a717861c07` resolves the expected lexical and semantic fallback colours,
+including the parameter. Normal-vision OKLab distances from blue are 0.145 to
+teal, 0.123 to lavender, 0.117 to grey and 0.273 to orange. These bounded
+comparisons support the proposal; they are not colour-vision accessibility or
+actual rendered-editor acceptance. Other roles and Eclipse Dark are unchanged.
+
 ## Theme compatibility follow-up
 
 Evaluate a dated selection of popular theme families, built-in light and dark, and

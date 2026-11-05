@@ -5,6 +5,7 @@ import {VisibleField} from './pipeline';
 import {Span} from './syntax';
 import {canSuggestFunction,functionFact} from './reference';
 
+import {stageHelp} from './stage-help';
 export interface CompletionCandidate {
   label:string; kind:'stage'|'function'|'field'|'alias'|'option'; replace:Span; insertText:string;
   detail:string; source?:string; summary?:string; rank:number;
@@ -18,13 +19,13 @@ export function completionCandidates(analysis:DocumentAnalysis,offset:number):re
   const stageName=doc.tree.stages.find(stage=>stage.name.start===context.stageStart&&stage.queryId===context.queryId)?.name.text;
   const add=(label:string,kind:CompletionCandidate['kind'],detail:string,rank:number,source?:string,insertText=label)=>{
     if(insertText.startsWith(prefix)) {
-      const summary=kind==='function'?functionFact(label)?.summary:undefined;
+      const summary=kind==='function'?functionFact(label)?.summary:kind==='stage'?stageHelp(label)?.summary:undefined;
       result.push({label,kind,replace:{...context.replace},insertText,detail,rank,source,...(summary?{summary}:{})});
     }
   };
   if(context.kind==='stage') {
     const entry=!doc.tree.stages.some(s=>s.queryId===context.queryId&&s.name.start<context.replace.start);
-    for(const symbol of catalogue.symbols) if(symbol.kind==='stage'&&(!entry||starts.has(symbol.name))) add(symbol.name,'stage','XQL stage · reference '+catalogue.checked,30,symbol.source);
+    for(const symbol of catalogue.symbols) if(symbol.kind==='stage'&&(!entry||starts.has(symbol.name))) add(symbol.name,'stage','XQL stage',30,symbol.source);
   } else {
     let environment=pipeline.environmentAt(context.queryId,offset),qualifier=context.qualifier??[];
     const aliases=symbols.bindings.filter(b=>b.role==='queryAlias'&&b.queryId===context.queryId&&b.stageStart===context.stageStart&&offset>=b.availableFrom);
@@ -51,7 +52,7 @@ export function completionCandidates(analysis:DocumentAnalysis,offset:number):re
     }
     if(context.kind!=='member') {
       for(const alias of aliases) add(alias.name,'alias','Query alias · join predicate',1);
-      if(context.kind==='expression') for(const symbol of catalogue.symbols) if(symbol.kind==='function'&&canSuggestFunction(symbol.name,stageName)) add(symbol.name,'function','XQL function · reference '+catalogue.checked,30,symbol.source);
+      if(context.kind==='expression') for(const symbol of catalogue.symbols) if(symbol.kind==='function'&&canSuggestFunction(symbol.name,stageName)) add(symbol.name,'function','XQL function',30,symbol.source);
     }
   }
   const unique=new Map<string,CompletionCandidate>();

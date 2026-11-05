@@ -1,6 +1,7 @@
 import data from '../../reference/catalogue.json';
 import {MAX_LENGTH} from './lexer';
 import {functionFact,canSuggestFunction} from './reference';
+import {stageHelp} from './stage-help';
 import {contextAt} from './roles';
 import {createAnalysis, DocumentAnalysis, Finding} from './analysis';
 export {MAX_LENGTH, scan} from './lexer';
@@ -51,5 +52,6 @@ export function hover(text: string, offset: number, analysis: DocumentAnalysis =
   const token = call?.name ?? stage?.name;
   if (!token) return;
   const symbol = symbols.get((call?'function:':'stage:') + token.text);
-  if (symbol) return {symbol, start:token.start, end:token.end, signature:call?functionFact(token.text):undefined};
+  if (symbol) return {symbol, start:token.start, end:token.end, signature:call?functionFact(token.text):undefined,
+    summary:call?functionFact(token.text)?.summary:stageHelp(token.text)?.summary};
 }

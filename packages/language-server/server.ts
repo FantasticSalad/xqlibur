@@ -1,6 +1,7 @@
 import {createConnection, TextDocuments, TextDocumentSyncKind, CompletionItemKind, DiagnosticSeverity, MarkupKind, SemanticTokensBuilder} from 'vscode-languageserver/node';
 import {TextDocument} from 'vscode-languageserver-textdocument';
-import {AnalysisStore, createAnalysis, completionCandidates, localHover, hover, checked, signatureHelp, contextAt} from '../core';
+import {AnalysisStore, createAnalysis, completionCandidates, localHover, hover, signatureHelp, contextAt} from '../core';
+import {hoverHelp,localExplanation} from '../core/hover-help';
 import type {DocumentAnalysis} from '../core';
 import {semanticTokens, tokenTypes, tokenModifiers, semanticModifierBits} from '../core/semantic';
 import {displayForm} from '../core/signatures';
@@ -85,7 +86,7 @@ connection.onCompletion((params) => {
   const kinds={stage:CompletionItemKind.Keyword,function:CompletionItemKind.Function,field:CompletionItemKind.Field,alias:CompletionItemKind.Module,option:CompletionItemKind.Property};
   return view?completionCandidates(view.analysis,view.offset).map(s => ({label:s.label,kind:kinds[s.kind],detail:s.detail,
     sortText:String(s.rank).padStart(3,'0')+':'+s.label,filterText:s.insertText,insertText:s.insertText,
-    ...(s.summary?{documentation:{kind:MarkupKind.Markdown,value:escapeMarkdown(s.summary)+(s.source?`\n\n[Public documentation](${s.source})`:'')}}:{}),
+    ...(s.summary?{documentation:{kind:MarkupKind.Markdown,value:escapeMarkdown(s.summary)+(s.source?`\n\n[Supporting Documentation](${s.source})`:'')}}:{}),
     textEdit:{range:{start:view.position(s.replace.start),end:view.position(s.replace.end)},newText:s.insertText}})):[];
 });
 connection.onHover(params => {
@@ -94,17 +95,19 @@ connection.onHover(params => {
   const view=viewAt(doc,params.position);
   if(!view) return null;
   const local=localHover(view.analysis,view.offset);
-  if(local) return {contents:{kind:MarkupKind.Markdown,value:`**${escapeMarkdown(local.name)}** — ${escapeMarkdown(local.role)}\n\n${escapeMarkdown(local.origin)} · ${escapeMarkdown(local.certainty)}. Local analysis; source membership and runtime behavior remain unverified.`},
+  if(local) return {contents:{kind:MarkupKind.Markdown,value:`**${escapeMarkdown(local.name)}** — ${escapeMarkdown(local.role)}\n\n${escapeMarkdown(localExplanation(local.role,local.origin,local.certainty))}`},
     range:{start:view.position(local.start),end:view.position(local.end)}};
   const result=hover(view.text,view.offset,view.analysis);
   if(!result) return null;
-  const signatureLine=result.signature?.forms.map(form => {
+  const help=hoverHelp[result.symbol.kind+':'+result.symbol.name];
+  const signatureLine=help?.syntax?`\n\n${escapeMarkdown(help.syntax)}`:result.signature?.forms.map(form => {
     const display=displayForm(result.signature!.name,form);
-    return `\n\n${escapeMarkdown(display.label)}\n\n[Public syntax reference](${display.source}) · checked ${display.checked}`;
+    return `\n\n${escapeMarkdown(display.label)}`;
   }).join('')??'';
-  const summary=result.signature?.summary?`\n\n${escapeMarkdown(result.signature.summary)}`:'';
+  const description=result.symbol.kind==='stage'?result.summary:help?.summary??result.summary;
+  const summary=description?`\n\n${escapeMarkdown(description)}`:'';
   // Only bundled, reviewed HTTPS source links; no query text or executable markdown.
-  return {contents:{kind:MarkupKind.Markdown,value:`**${escapeMarkdown(result.symbol.name)}** — XQL ${result.symbol.kind}${summary}${signatureLine}\n\n[Public documentation](${result.symbol.source})\n\nReference checked ${checked}. Argument hints cover selected documented forms; runtime behavior remains unverified.`},range:{start:view.position(result.start),end:view.position(result.end)}};
+  return {contents:{kind:MarkupKind.Markdown,value:`**${escapeMarkdown(result.symbol.name)}** — XQL ${result.symbol.kind}${summary}${signatureLine}\n\n[Supporting Documentation](${help?.source??result.symbol.source})`},range:{start:view.position(result.start),end:view.position(result.end)}};
 });
 connection.onSignatureHelp(params => {
   const doc=documents.get(params.textDocument.uri);
@@ -117,7 +120,7 @@ connection.onSignatureHelp(params => {
   return {
     signatures:help.signatures.map(s => ({label:s.label,parameters:[...s.parameters],
       ...(s.activeParameter!==undefined?{activeParameter:s.activeParameter}:{}),
-      documentation:{kind:MarkupKind.Markdown,value:`[Public syntax reference](${s.source}) · checked ${s.checked}${summary}`}})),
+      documentation:{kind:MarkupKind.Markdown,value:`[Supporting Documentation](${s.source})${summary}`}})),
     activeSignature:help.activeSignature,
     ...(help.activeParameter!==undefined?{activeParameter:help.activeParameter}:{})
   };

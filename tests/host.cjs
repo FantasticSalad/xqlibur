@@ -6,6 +6,20 @@ exports.run=async()=>{
   const extension=vscode.extensions.getExtension('FantasticSalad.xqlibur');
   assert.ok(extension,'Extension is discoverable');
   await extension.activate();
+  const helpDoc=await vscode.workspace.openTextDocument({language:'cortex-xql',content:'dataset = xdr_data | fields _time'});
+  let stageHelp=[];
+  for(let attempt=0;attempt<50&&!stageHelp.length;attempt++) {
+    stageHelp=await vscode.commands.executeCommand('vscode.executeHoverProvider',helpDoc.uri,helpDoc.positionAt(22))??[];
+    if(!stageHelp.length) await new Promise(resolve=>setTimeout(resolve,100));
+  }
+  assert.ok(stageHelp.some(h=>h.contents.some(c=>/Selects, excludes, or renames/.test(c.value??''))));
+  assert.doesNotMatch(JSON.stringify(stageHelp),/\b\d{4}-\d{2}-\d{2}\b/);
+  const unknownDoc=await vscode.workspace.openTextDocument({language:'cortex-xql',content:'dataset = xdr_data | unknown_stage | alter result = unknown_function()'});
+  for(let attempt=0;attempt<50&&!vscode.languages.getDiagnostics(unknownDoc.uri).some(d=>d.code==='XQL202');attempt++) await new Promise(resolve=>setTimeout(resolve,100));
+  const unknownDiagnostics=vscode.languages.getDiagnostics(unknownDoc.uri);
+  assert.ok(unknownDiagnostics.some(d=>d.code==='XQL201'));
+  assert.ok(unknownDiagnostics.some(d=>d.code==='XQL202'));
+  assert.doesNotMatch(JSON.stringify(unknownDiagnostics),/\b\d{4}-\d{2}-\d{2}\b/);
   const doc=await vscode.workspace.openTextDocument({language:'cortex-xql',content:'dataset = xdr_data | '});
   let completion;
   for(let i=0;i<50;i++) {

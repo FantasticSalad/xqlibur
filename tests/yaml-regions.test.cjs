@@ -51,7 +51,7 @@ test('bundled LSP serves independent YAML XQL blocks and leaves ordinary YAML al
   const document=TextDocument.create(uri,'yaml',1,source);
   assert.equal(TextDocument.applyEdits(document,[filter.textEdit]),source.replace('| fi','| filter'));
   const stage=await request('textDocument/hover',{textDocument:{uri},position:{line:2,character:4}});
-  assert.match(stage.contents.value,/Public documentation/);
+  assert.match(stage.contents.value,/Supporting Documentation/);
   assert.deepEqual(stage.range,{start:{line:2,character:2},end:{line:2,character:9}});
   assert.equal(await request('textDocument/hover',{textDocument:{uri},position:{line:0,character:2}}),null);
   await new Promise(resolve=>setTimeout(resolve,300));

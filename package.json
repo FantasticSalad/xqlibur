@@ -2,7 +2,7 @@
   "name": "xqlibur",
   "displayName": "XQLibur",
   "description": "Highlighting, completion, hovers, argument hints and conservative diagnostics for Cortex XQL, including XQL blocks in YAML. Runs locally; no query execution.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "preview": true,
   "icon": "images/icon.png",
   "galleryBanner": {
@@ -62,6 +62,17 @@
             {"scope":"support.function.xql","settings":{"foreground":"#A7EC21"}},
             {"scope":"entity.name.function.xql","settings":{"foreground":"#A7EC21"}}
           ]
+        },
+        "[Dark 2026]": {
+          "textMateRules": [
+            {"scope":"keyword.control.xql","settings":{"foreground":"#6CB6FF"}},
+            {"scope":"keyword.control.clause.xql","settings":{"foreground":"#6CB6FF"}},
+            {"scope":"keyword.operator.word.xql","settings":{"foreground":"#C8A0DE"}},
+            {"scope":"keyword.operator.xql","settings":{"foreground":"#C8A0DE"}},
+            {"scope":"support.function.xql","settings":{"foreground":"#4EC9B0"}},
+            {"scope":"entity.name.function.xql","settings":{"foreground":"#4EC9B0"}},
+            {"scope":"punctuation.section.parens.begin.xql, punctuation.section.parens.end.xql, punctuation.section.brackets.begin.xql, punctuation.section.brackets.end.xql, punctuation.section.braces.begin.xql, punctuation.section.braces.end.xql","settings":{"foreground":"#B0BEC5"}}
+          ]
         }
       }
     },
@@ -71,8 +82,8 @@
       {
         "id": "cortex-xql",
         "aliases": [
-          "Cortex XQL",
-          "XQL"
+          "XQL",
+          "Cortex XQL"
         ],
         "extensions": [
           ".xql"
