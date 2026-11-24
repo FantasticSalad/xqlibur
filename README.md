@@ -32,7 +32,7 @@ appear where they can be used.
 ## Understand stages and functions
 
 Hover over a stage to see what it does and open its supporting documentation.
-All 28 supported stages have definitions. Function help includes official
+All 29 supported stages have definitions. Function help includes official
 reference links, reviewed summaries where available, and argument hints that
 follow nested calls and optional or repeated parameters.
 
@@ -65,7 +65,7 @@ xql: |
 
 ## Catch common mistakes
 
-Diagnostics identify structural problems, argument counts for 130 reviewed
+Diagnostics identify structural problems, argument counts for 143 reviewed
 functions, and fields removed by earlier stages. Unknown names are warnings.
 Partially reviewed forms stay conservative. Untitled documents, Restricted Mode
 and virtual workspaces are supported.
@@ -73,7 +73,7 @@ and virtual workspaces are supported.
 ## Limits
 
 - Complete XQL syntax, implicit operator precedence and argument types are not
-  verified. Argument counts are checked only for the 130 reviewed functions;
+  verified. Argument counts are checked only for the 143 reviewed functions;
   partially reviewed functions are never rejected.
 - Field availability depends on your tenant's schemas, which XQLibur does not
   read. Field help comes only from what the query itself defines.

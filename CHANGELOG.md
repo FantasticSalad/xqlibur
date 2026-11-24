@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.2 (2026-11-24)
+
+The bundled reference now includes names added to the public XQL reference since
+the last snapshot, so they no longer show unknown-name warnings:
+
+- `max_by` and `min_by`, aggregates for `comp` that return a value from the row
+  where another expression is highest or lowest.
+- `atan`, `atan2`, and the hyperbolic functions `sinh`, `cosh`, `tanh`, `csch`,
+  `sech`, `coth`, `asinh`, `acosh` and `atanh`.
+- The `switch` stage. Its hover notes that the public reference supports it only in
+  Data Pipeline filters, not in queries or rules.
+
+All 13 functions have hover help, argument hints and argument-count checks. A
+documentation link whose page was removed now points to the functions index.
+
 ## 0.3.1 (2026-11-06)
 
 The language-mode menu and status bar identify the language as XQL.

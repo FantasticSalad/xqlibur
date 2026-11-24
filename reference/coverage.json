@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogueChecked": "2026-10-25",
+  "catalogueChecked": "2026-11-24",
   "functions": [
     {
       "name": "acos",
@@ -916,11 +916,11 @@
         "expression"
       ],
       "sources": [
-        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_functions_reference"
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/functions-list"
       ],
-      "reason": "Catalogue points to a JSON overview whose syntax describes json_extract, not a callable json_functions_reference function. Retain catalogue name/link; do not invent a signature.",
+      "reason": "The index row named a JSON overview whose syntax described json_extract, not a callable json_functions_reference function. That overview page now returns 404 and the index row links to a broken target, so the catalogue cites the official functions index. Retain the catalogue name; do not invent a signature.",
       "reviewBatch": "R03a-02",
-      "checked": "2026-10-25"
+      "checked": "2026-11-24"
     },
     {
       "name": "json_path_extract",
@@ -1876,6 +1876,177 @@
       "reason": "Complete public syntax, required table and consistent target examples establish 2 positional slots. Counts only; no regex/pattern execution, capture/replacement, stage/license availability, type, null or runtime validation.",
       "reviewBatch": "R03-arity-13",
       "checked": "2026-10-26"
+    },
+    {
+      "name": "acosh",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/acosh"
+      ],
+      "reason": "Added to the public index after the previous snapshot. Complete public positional syntax and required table agree on exactly one argument; examples agree. Counts only; types, input domain, null and runtime behavior remain unverified.",
+      "reviewBatch": "R04-index-2026-11-24",
+      "checked": "2026-11-24"
+    },
+    {
+      "name": "asinh",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/asinh"
+      ],
+      "reason": "Added to the public index after the previous snapshot. Complete public positional syntax and required table agree on exactly one argument; examples agree. Counts only; types, input domain, null and runtime behavior remain unverified.",
+      "reviewBatch": "R04-index-2026-11-24",
+      "checked": "2026-11-24"
+    },
+    {
+      "name": "atan",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/atan"
+      ],
+      "reason": "Added to the public index after the previous snapshot. Complete public positional syntax and required table agree on exactly one argument; examples agree. Counts only; types, input domain, null and runtime behavior remain unverified.",
+      "reviewBatch": "R04-index-2026-11-24",
+      "checked": "2026-11-24"
+    },
+    {
+      "name": "atan2",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/atan2"
+      ],
+      "reason": "Added to the public index after the previous snapshot. Complete public positional syntax and required table agree on exactly two arguments, y then x; examples agree. Counts only; types, quadrant, null and runtime behavior remain unverified.",
+      "reviewBatch": "R04-index-2026-11-24",
+      "checked": "2026-11-24"
+    },
+    {
+      "name": "atanh",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/atanh"
+      ],
+      "reason": "Added to the public index after the previous snapshot. Complete public positional syntax and required table agree on exactly one argument; examples agree. Counts only; types, input domain, null and runtime behavior remain unverified.",
+      "reviewBatch": "R04-index-2026-11-24",
+      "checked": "2026-11-24"
+    },
+    {
+      "name": "cosh",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cosh"
+      ],
+      "reason": "Added to the public index after the previous snapshot. Complete public positional syntax and required table agree on exactly one argument; examples agree. Counts only; types, input domain, null and runtime behavior remain unverified.",
+      "reviewBatch": "R04-index-2026-11-24",
+      "checked": "2026-11-24"
+    },
+    {
+      "name": "coth",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/coth"
+      ],
+      "reason": "Added to the public index after the previous snapshot. Complete public positional syntax and required table agree on exactly one argument; examples agree. Counts only; types, input domain, null and runtime behavior remain unverified.",
+      "reviewBatch": "R04-index-2026-11-24",
+      "checked": "2026-11-24"
+    },
+    {
+      "name": "csch",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/csch"
+      ],
+      "reason": "Added to the public index after the previous snapshot. Complete public positional syntax and required table agree on exactly one argument; examples agree. Counts only; types, input domain, null and runtime behavior remain unverified.",
+      "reviewBatch": "R04-index-2026-11-24",
+      "checked": "2026-11-24"
+    },
+    {
+      "name": "max_by",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "comp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/max_by"
+      ],
+      "reason": "Added to the public index after the previous snapshot. Public syntax, required table and comp examples agree on exactly two arguments, return expression then sort expression; the page describes an aggregate for comp. Counts only in comp; grouping, ties, null, types and runtime behavior remain unverified.",
+      "reviewBatch": "R04-index-2026-11-24",
+      "checked": "2026-11-24"
+    },
+    {
+      "name": "min_by",
+      "status": "verified",
+      "contexts": [
+        "expression",
+        "comp"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/min_by"
+      ],
+      "reason": "Added to the public index after the previous snapshot. Public syntax, required table and comp examples agree on exactly two arguments, return expression then sort expression; the page describes an aggregate for comp. Counts only in comp; grouping, ties, null, types and runtime behavior remain unverified.",
+      "reviewBatch": "R04-index-2026-11-24",
+      "checked": "2026-11-24"
+    },
+    {
+      "name": "sech",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sech"
+      ],
+      "reason": "Added to the public index after the previous snapshot. Complete public positional syntax and required table agree on exactly one argument; examples agree. Counts only; types, input domain, null and runtime behavior remain unverified.",
+      "reviewBatch": "R04-index-2026-11-24",
+      "checked": "2026-11-24"
+    },
+    {
+      "name": "sinh",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sinh"
+      ],
+      "reason": "Added to the public index after the previous snapshot. Complete public positional syntax and required table agree on exactly one argument; examples agree. Counts only; types, input domain, null and runtime behavior remain unverified.",
+      "reviewBatch": "R04-index-2026-11-24",
+      "checked": "2026-11-24"
+    },
+    {
+      "name": "tanh",
+      "status": "verified",
+      "contexts": [
+        "expression"
+      ],
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/tanh"
+      ],
+      "reason": "Added to the public index after the previous snapshot. Complete public positional syntax and required table agree on exactly one argument; examples agree. Counts only; types, input domain, null and runtime behavior remain unverified.",
+      "reviewBatch": "R04-index-2026-11-24",
+      "checked": "2026-11-24"
     }
   ]
 }

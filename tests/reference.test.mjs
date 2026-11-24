@@ -7,7 +7,7 @@ const [signatures, coverage, catalogue] = await Promise.all(['signatures', 'cove
 const arityFixtures=JSON.parse(await readFile(new URL('./fixtures/verified-arities.json',import.meta.url),'utf8'));
 test('v3 reference accounts for every catalogue function and preserves baseline display facts', () => {
   validateReference(signatures, coverage, catalogue);
-  assert.equal(coverage.functions.length, 142);
+  assert.equal(coverage.functions.length, 155);
   for (const name of ['lowercase','arrayfilter','arrayindex','concat','coalesce','json_extract_scalar','timestamp_diff','to_string']) assert.ok(signatures.functions.some(f => f.name === name));
   assert.ok(signatures.functions.length >= 18);
   const verified=new Set(arityFixtures.map(f=>f.name));

@@ -7,9 +7,14 @@ env:
   TZ: UTC
 jobs:
   test:
+    # A pull request from a branch of this repository was already checked by its push.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        # Hosted Windows and macOS runners cost several times a Linux one in a private
+        # repository, so there they run on the default branch only and other branches run
+        # Linux. A public repository runs all three every time.
+        os: ${{ fromJSON((github.ref_name == github.event.repository.default_branch || !github.event.repository.private) && '["ubuntu-latest", "windows-latest", "macos-latest"]' || '["ubuntu-latest"]') }}
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
@@ -24,6 +29,7 @@ jobs:
       - run: npm run package
   package-host:
     # Runs the extracted VSIX in an isolated VS Code profile in Restricted Mode.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803

@@ -128,5 +128,18 @@
   {"name":"row_number","contexts":["windowcomp"],"suffix":" sort order_value as result","valid":["row_number()"],"invalid":["row_number(1)","row_number(1, 2)"]},
   {"name":"arrayfilter","valid":["arrayfilter(source_items, \"@element\" > 0)","arrayfilter(1, 2)"],"invalid":["arrayfilter()","arrayfilter(source_items)","arrayfilter(1, 2, 3)"]},
   {"name":"array_all","valid":["array_all(source_items, \"@element\" = 1)","array_all(1, 2)"],"invalid":["array_all()","array_all(source_items)","array_all(1, 2, 3)"]},
-  {"name":"array_any","valid":["array_any(source_items, \"@element\" = 1)","array_any(source_items, \"@element=one,two\")","array_any(1, 2)"],"invalid":["array_any()","array_any(source_items)","array_any(1, 2, 3)"]}
+  {"name":"array_any","valid":["array_any(source_items, \"@element\" = 1)","array_any(source_items, \"@element=one,two\")","array_any(1, 2)"],"invalid":["array_any()","array_any(source_items)","array_any(1, 2, 3)"]},
+  {"name":"acosh","valid":["acosh(2)","acosh(source_value)"],"invalid":["acosh()","acosh(1, 2)"]},
+  {"name":"asinh","valid":["asinh(-1)","asinh(source_value)"],"invalid":["asinh()","asinh(1, 2)"]},
+  {"name":"atan","valid":["atan(1)","atan(source_value)"],"invalid":["atan()","atan(1, 2)"]},
+  {"name":"atan2","valid":["atan2(1, 0)","atan2(source_y, source_x)"],"invalid":["atan2()","atan2(1)","atan2(1, 2, 3)"]},
+  {"name":"atanh","valid":["atanh(0.5)","atanh(source_value)"],"invalid":["atanh()","atanh(0.5, 2)"]},
+  {"name":"cosh","valid":["cosh(0)","cosh(source_value)"],"invalid":["cosh()","cosh(1, 2)"]},
+  {"name":"coth","valid":["coth(1)","coth(source_value)"],"invalid":["coth()","coth(1, 2)"]},
+  {"name":"csch","valid":["csch(1)","csch(source_value)"],"invalid":["csch()","csch(1, 2)"]},
+  {"name":"sech","valid":["sech(0)","sech(source_value)"],"invalid":["sech()","sech(1, 2)"]},
+  {"name":"sinh","valid":["sinh(1)","sinh(source_value)"],"invalid":["sinh()","sinh(1, 2)"]},
+  {"name":"tanh","valid":["tanh(1)","tanh(divide(source_value, 100))"],"invalid":["tanh()","tanh(1, 2)"]},
+  {"name":"max_by","contexts":["comp"],"valid":["max_by(source_name, order_value)","max_by(1, 2)"],"invalid":["max_by()","max_by(source_name)","max_by(1, 2, 3)"]},
+  {"name":"min_by","contexts":["comp"],"valid":["min_by(source_name, order_value)","min_by(1, 2)"],"invalid":["min_by()","min_by(source_name)","min_by(1, 2, 3)"]}
 ]

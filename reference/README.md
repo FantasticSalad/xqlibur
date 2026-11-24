@@ -11,8 +11,12 @@ definitions for every catalogued stage, using each catalogue entry's official
 source link. Reviewed on 2026-11-05 against the individual stage pages; transpose
 has only the official stage-index description, and datamodel uses the linked XDM
 best-practices page. The index's conflicting preset/view descriptions are not used.
+The switch stage was added on 2026-11-24 from its own page, which supports it only
+in Data Pipeline filters; its case/default clauses get no dedicated parsing.
 Unknown names produce warnings, because the catalogue can be incomplete.
 External draft links in the indexes are replaced by citations to the official index.
+So are broken index links: `json_functions_reference`'s page was removed, and its
+index row now has no working target.
 The separately documented `datamodel` entry is curated in the update script.
 
 Stage-qualified function labels retain their context annotations and public source

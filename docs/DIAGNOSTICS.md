@@ -20,7 +20,7 @@ retain their existing structural handling.
 | XQL201 | warning | Stage absent from bundled inventory | Catalogue date retained; newer Cortex syntax may exist |
 | XQL202 | warning | Function absent from bundled inventory | Catalogue date retained; this does not establish a Cortex error |
 | XQL301 | warning | Established local binding removed/renamed | Complete supported stage, closed safe ordinary input and known earlier binding/removal proof |
-| XQL302 | warning, evidence gated | Proven direct argument-count mismatch | Closed complete call and all applicable call counts fully verified; 130 explicitly reviewed functions only |
+| XQL302 | warning, evidence gated | Proven direct argument-count mismatch | Closed complete call and all applicable call counts fully verified; 143 explicitly reviewed functions only |
 
 301–399 are reserved for evidence-gated local-name/call rules. 401–499 are reserved
 for future supported expression-production diagnostics; no such rule is enabled by
@@ -53,19 +53,20 @@ XQL302 requires function status verified and every applicable call form arityVer
 Positional forms require known parameter layout; special displays require a separate
 explicit `callCount` range under schema v3. Optional/repeated and all possible
 overload counts are considered; types never select a form. Partial/display-only
-and unproved special/unknown call alternatives fail open. 145 call forms across
-130 functions have verified counts:
+and unproved special/unknown call alternatives fail open. 158 call forms across
+143 functions have verified counts:
 rand/current_time/time_frame_end take none; lowercase/uppercase/ceil/floor/sqrt/exp/acos/asin/cos/
 sin/tan/ln/log10/to_number/to_string/to_integer/to_boolean/to_json_string/array_length/
 len/arraymerge/is_ipv4/is_ipv6/is_known_private_ipv4/is_known_private_ipv6/to_float/
 md5/sha1/sha256/sha512/convert_from_base_64/convert_to_base_64/extract_url_host/
 extract_url_pub_suffix/extract_url_registered_domain/int_to_ip/ip_to_int/cbrt/cot/
-csc/sec/sign/round/safe_negate/timestamp_seconds/is_sla_breached/sla_time_remaining take one;
+csc/sec/sign/round/safe_negate/timestamp_seconds/is_sla_breached/sla_time_remaining/atan/
+sinh/cosh/tanh/csch/sech/coth/asinh/acosh/atanh take one;
 log/pow/power/incidr/incidr6/arrayindex/arraymap/arraystring/
 add/subtract/multiply/divide/mod/safe_add/safe_subtract/safe_multiply/safe_divide/
 bitwise_and/bitwise_or/bitwise_xor/bitwise_sleft/bitwise_sright/cosine_distance/
 euclidean_distance/string_count/regextract/wildcard_match/json_extract_scalar/
-json_extract/json_extract_array/json_extract_scalar_array/json_path_extract/extract_time/range_bucket take two;
+json_extract/json_extract_array/json_extract_scalar_array/json_path_extract/extract_time/range_bucket/atan2 take two;
 replace/arrayrange/replex/timestamp_diff take three; trim/ltrim/rtrim/trunc/split take one or two;
 concat/arrayconcat/greatest/least/object_merge take two or more;
 hierarchy_match takes zero, one or two; to_timestamp takes one or two; parse_timestamp and
@@ -76,6 +77,7 @@ Avg/min/max/median/sum/latest/stddev_population/stddev_sample take one argument 
 in their reviewed comp/windowcomp contexts; list/values/earliest/approx_count/var
 only in comp. Count takes zero or one in comp/windowcomp; no star form is inferred.
 Approx_quantiles takes two or three and approx_top one, two or three only in comp.
+Max_by/min_by take exactly two only in comp.
 Approximate result accuracy, value bounds, weights and distinct behavior are unchecked.
 Unsupported stages/window shapes,
 unrelated expression contexts and child-query scope boundaries cannot broaden

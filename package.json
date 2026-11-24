@@ -2,7 +2,7 @@
   "name": "xqlibur",
   "displayName": "XQLibur",
   "description": "Highlighting, completion, hovers, argument hints and conservative diagnostics for Cortex XQL, including XQL blocks in YAML. Runs locally; no query execution.",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "preview": true,
   "icon": "images/icon.png",
   "galleryBanner": {
@@ -136,5 +136,10 @@
     "typescript": "7.0.2",
     "vscode-oniguruma": "2.0.1",
     "vscode-textmate": "9.3.2"
+  },
+  "overrides": {
+    "@vscode/vsce": {
+      "minimatch": "11.0.8"
+    }
   }
 }

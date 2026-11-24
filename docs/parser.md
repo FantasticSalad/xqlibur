@@ -58,9 +58,10 @@ Diagnostics distinguish inventory warnings from proven local scope evidence. A
 removed-name warning requires a known binding, exact supported removal proof and
 closed safe context; open/wildcard/uncertain/partial/system/JSON cases stay quiet.
 Arity rejection requires fully verified applicable forms. Current bundled facts
-include verified call counts for 130 functions (rand/current_time/time_frame_end: zero;
+include verified call counts for 143 functions (rand/current_time/time_frame_end: zero;
 lowercase/uppercase/ceil/floor/sqrt/exp/acos/asin/cos/sin/tan/ln/log10,
-cbrt/cot/csc/sec/sign/round/safe_negate and the six
+cbrt/cot/csc/sec/sign/round/safe_negate, atan and the hyperbolic
+sinh/cosh/tanh/csch/sech/coth/asinh/acosh/atanh and the six
 reviewed scalar converters including to_float, array_length/len/arraymerge, four IP
 predicates, md5/sha1/sha256/sha512, convert_from_base_64/convert_to_base_64,
 extract_url_host/extract_url_pub_suffix/extract_url_registered_domain and
@@ -70,7 +71,7 @@ add/subtract/multiply/divide/mod/safe_add/safe_subtract/safe_multiply/safe_divid
 bitwise_and/bitwise_or/bitwise_xor/bitwise_sleft/bitwise_sright and
 cosine_distance/euclidean_distance/string_count/regextract/wildcard_match and
 json_extract_scalar/json_extract/json_extract_array/json_extract_scalar_array/
-json_path_extract/extract_time/range_bucket: two;
+json_path_extract/extract_time/range_bucket/atan2: two;
 replace/arrayrange/replex/timestamp_diff: three;
 trim/ltrim/rtrim/to_timestamp/trunc/split: one or two;
 parse_timestamp/format_timestamp/date_floor: two or three; parse_epoch: two, three
@@ -80,7 +81,8 @@ remain unverified; unsupported inner expressions still suppress count findings.
 Avg/min/max/median/sum/latest/stddev_population/stddev_sample take one argument only
 in comp/windowcomp; list/values/earliest/approx_count/var only in comp. Count takes
 zero or one in comp/windowcomp. Approx_quantiles takes two or three and approx_top
-one, two or three only in comp. These facts establish no input type, ordering,
+one, two or three only in comp. Max_by/min_by take exactly two only in comp.
+These facts establish no input type, ordering,
 grouping/window-frame behavior or implicit output names.
 First/last take one argument only in comp; first_value/last_value one, rank/row_number
 zero and lag one, two or three only in windowcomp. Required ordering/sort, frames,
@@ -107,7 +109,7 @@ override semantic highlighting. The extension never installs a color theme.
 
 ## Signatures
 
-`reference/signatures.json` schema v3 contains 159 forms for 130 count-verified and
+`reference/signatures.json` schema v3 contains 172 forms for 143 count-verified and
 eight partial function entries; four blocked entries retain links only. Each form records contexts,
 an official source URL and its own checked
 date. Names and parameter facts are retained, without copying vendor
@@ -140,11 +142,14 @@ and escape validity remain evidence gaps. An arrow alone never establishes a lam
 
 ## Current reference and role coverage
 
-R03 accounting covers 142 names: 130 count-verified, eight partial and four
-blocked/link-only entries, with 159 forms. Four forms describe infix JSON access and
-appear in hovers only. Only 145 reviewed call forms across those 130 functions enable argument-count
-warnings; types remain unverified. The inventory now
-includes the documented cold_dataset spelling alongside 27 earlier stage names.
+Reference accounting covers 155 names: 143 count-verified, eight partial and four
+blocked/link-only entries, with 172 forms. Four forms describe infix JSON access and
+appear in hovers only. Only 158 reviewed call forms across those 143 functions enable argument-count
+warnings; types remain unverified. The inventory
+includes the documented cold_dataset spelling alongside 28 other stage names.
+The 2026-11-24 index refresh added the switch stage, which the public reference
+supports only in Data Pipeline filters, and 13 functions: atan, atan2, the
+hyperbolic and inverse hyperbolic functions, and the max_by/min_by aggregates.
 
 Schema v3 keeps positional parameter layout (`arityKnown`/`parameters`) separate
 from an explicit special-form `callCount` range. Special direct-count evidence must

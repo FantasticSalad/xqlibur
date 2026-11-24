@@ -23,6 +23,7 @@ const summaries: Readonly<Record<string,string>> = {
   replacenull: 'Replaces null values in a field with a specified value.',
   search: 'Finds text across ingested data in one or more datasets.',
   sort: 'Orders records by one or more fields in ascending or descending order.',
+  switch: 'Keeps or removes fields per event with case conditions. Supported only in Data Pipeline filters, not in queries or rules.',
   tag: 'Appends labels to the records\' _tag field.',
   target: 'Saves query results to a dataset or lookup table.',
   top: 'Finds the most common field values with approximate counts and percentages.',
@@ -33,8 +34,12 @@ const summaries: Readonly<Record<string,string>> = {
   windowcomp: 'Calculates results over a window of records while retaining the individual rows.'
 };
 
+// Stages reviewed after the 2026-11-05 pass carry their own review date.
+const checkedAfter: Readonly<Record<string,string>> = {switch:'2026-11-24'};
+
 const stages = new Map(catalogue.symbols.filter(s=>s.kind==='stage').map(s=>[s.name,s]));
 export function stageHelp(name:string) {
   const symbol=stages.get(name),summary=Object.hasOwn(summaries,name)?summaries[name]:undefined;
-  return symbol&&summary?{summary,source:symbol.source,checked:'2026-11-05'}:undefined;
+  const checked=Object.hasOwn(checkedAfter,name)?checkedAfter[name]:'2026-11-05';
+  return symbol&&summary?{summary,source:symbol.source,checked}:undefined;
 }

@@ -4096,6 +4096,346 @@
           "checked": "2026-10-26"
         }
       ]
+    },
+    {
+      "name": "acosh",
+      "status": "verified",
+      "summary": "Returns the inverse hyperbolic cosine of a number. The input must be at least 1.",
+      "forms": [
+        {
+          "id": "acosh-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/acosh",
+          "checked": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "name": "asinh",
+      "status": "verified",
+      "summary": "Returns the inverse hyperbolic sine of a number.",
+      "forms": [
+        {
+          "id": "asinh-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/asinh",
+          "checked": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "name": "atan",
+      "status": "verified",
+      "summary": "Returns the arctangent of a number in radians, between -π/2 and π/2.",
+      "forms": [
+        {
+          "id": "atan-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "numeric_expression",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/atan",
+          "checked": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "name": "atan2",
+      "status": "verified",
+      "summary": "Returns the angle in radians from the positive x-axis to the point (x, y). The y coordinate comes first.",
+      "forms": [
+        {
+          "id": "atan2-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "y",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "x",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/atan2",
+          "checked": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "name": "atanh",
+      "status": "verified",
+      "summary": "Returns the inverse hyperbolic tangent of a number. The input must be between -1 and 1, exclusive.",
+      "forms": [
+        {
+          "id": "atanh-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/atanh",
+          "checked": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "name": "cosh",
+      "status": "verified",
+      "summary": "Returns the hyperbolic cosine of a number.",
+      "forms": [
+        {
+          "id": "cosh-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cosh",
+          "checked": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "name": "coth",
+      "status": "verified",
+      "summary": "Returns the hyperbolic cotangent of a number. The input must not be zero.",
+      "forms": [
+        {
+          "id": "coth-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/coth",
+          "checked": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "name": "csch",
+      "status": "verified",
+      "summary": "Returns the hyperbolic cosecant of a number. The input must not be zero.",
+      "forms": [
+        {
+          "id": "csch-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/csch",
+          "checked": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "name": "max_by",
+      "status": "verified",
+      "summary": "Aggregate for comp: returns the first expression's value from the row where the second expression is highest.",
+      "forms": [
+        {
+          "id": "max_by-positional-0",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "return_expression",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "sort_expression",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/max_by",
+          "checked": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "name": "min_by",
+      "status": "verified",
+      "summary": "Aggregate for comp: returns the first expression's value from the row where the second expression is lowest.",
+      "forms": [
+        {
+          "id": "min_by-positional-0",
+          "contexts": [
+            "comp"
+          ],
+          "parameters": [
+            {
+              "name": "return_expression",
+              "optional": false,
+              "repeat": false
+            },
+            {
+              "name": "sort_expression",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/min_by",
+          "checked": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "name": "sech",
+      "status": "verified",
+      "summary": "Returns the hyperbolic secant of a number.",
+      "forms": [
+        {
+          "id": "sech-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sech",
+          "checked": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "name": "sinh",
+      "status": "verified",
+      "summary": "Returns the hyperbolic sine of a number.",
+      "forms": [
+        {
+          "id": "sinh-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sinh",
+          "checked": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "name": "tanh",
+      "status": "verified",
+      "summary": "Returns the hyperbolic tangent of a number, between -1 and 1.",
+      "forms": [
+        {
+          "id": "tanh-positional-0",
+          "contexts": [
+            "expression"
+          ],
+          "parameters": [
+            {
+              "name": "number",
+              "optional": false,
+              "repeat": false
+            }
+          ],
+          "arityKnown": true,
+          "syntaxKind": "positional",
+          "validation": "arityVerified",
+          "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/tanh",
+          "checked": "2026-11-24"
+        }
+      ]
     }
   ]
 }

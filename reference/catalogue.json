@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checked": "2026-10-25",
+  "checked": "2026-11-24",
   "sources": [
     "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/stages-list",
     "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/functions-list"
@@ -10,6 +10,11 @@
       "name": "acos",
       "kind": "function",
       "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/acos"
+    },
+    {
+      "name": "acosh",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/acosh"
     },
     {
       "name": "add",
@@ -102,6 +107,26 @@
       "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/asin"
     },
     {
+      "name": "asinh",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/asinh"
+    },
+    {
+      "name": "atan",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/atan"
+    },
+    {
+      "name": "atan2",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/atan2"
+    },
+    {
+      "name": "atanh",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/atanh"
+    },
+    {
       "name": "avg",
       "kind": "function",
       "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/avg_with_comp_stage",
@@ -175,6 +200,11 @@
       "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cos"
     },
     {
+      "name": "cosh",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cosh"
+    },
+    {
       "name": "cosine_distance",
       "kind": "function",
       "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cosine_distance"
@@ -183,6 +213,11 @@
       "name": "cot",
       "kind": "function",
       "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/cot"
+    },
+    {
+      "name": "coth",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/coth"
     },
     {
       "name": "count",
@@ -206,6 +241,11 @@
       "name": "csc",
       "kind": "function",
       "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/csc"
+    },
+    {
+      "name": "csch",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/csch"
     },
     {
       "name": "current_time",
@@ -370,7 +410,7 @@
     {
       "name": "json_functions_reference",
       "kind": "function",
-      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/json_functions_reference"
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/functions-list"
     },
     {
       "name": "json_path_extract",
@@ -457,6 +497,11 @@
       ]
     },
     {
+      "name": "max_by",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/max_by"
+    },
+    {
       "name": "md5",
       "kind": "function",
       "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/md5"
@@ -486,6 +531,11 @@
         "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/min_with_comp_stage",
         "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/min_with_windowcomp_stage"
       ]
+    },
+    {
+      "name": "min_by",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/min_by"
     },
     {
       "name": "mod",
@@ -620,6 +670,11 @@
       "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sec"
     },
     {
+      "name": "sech",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sech"
+    },
+    {
       "name": "sha1",
       "kind": "function",
       "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sha1"
@@ -643,6 +698,11 @@
       "name": "sin",
       "kind": "function",
       "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sin"
+    },
+    {
+      "name": "sinh",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/sinh"
     },
     {
       "name": "sla_time_remaining",
@@ -712,6 +772,11 @@
       "name": "tan",
       "kind": "function",
       "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/tan"
+    },
+    {
+      "name": "tanh",
+      "kind": "function",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/functions/tanh"
     },
     {
       "name": "time_frame_end",
@@ -950,6 +1015,14 @@
       "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/sort",
       "sources": [
         "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/sort"
+      ]
+    },
+    {
+      "name": "switch",
+      "kind": "stage",
+      "source": "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/switch",
+      "sources": [
+        "https://cortex-docs.paloaltonetworks.com/xql-command-reference-guide/readme/stages/switch"
       ]
     },
     {
